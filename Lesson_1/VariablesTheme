@@ -1,0 +1,12 @@
+ public class VariablesTheme {
+  public static void main (String[] args);
+  byte core= 4;
+  short Hz= 3500;
+  int DDR= 16000;
+  long model= 3570;
+  float Ivy= 4.5f;
+  double d= 56,95656566;
+  char index='k';
+  boolean boo= true;
+  	System.out.println ("Количество ядер" + core,  " Частота процессора" + Hz, "Частота процессора в разгоне" + Ivy, "Название процессора" +model+index+,  + "Обьем памяти" + DDR "")
+ } 
