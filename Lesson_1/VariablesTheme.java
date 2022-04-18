@@ -28,7 +28,7 @@ public class VariablesTheme {
         System.out.println("Общая стоимость товаров со скидкой " + discont);
 
         //Вывод на консоль слова JAVA;
-        System.out.println("Вывод на консоль слова JAVA");
+        System.out.println("\nВывод на консоль слова JAVA");
         System.out.println("   J    a  v     v  a");
         System.out.println("   J   a a  v   v  a a");
         System.out.println("   J  aaaaa  V V  aaaaa");
