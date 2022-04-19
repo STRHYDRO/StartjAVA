@@ -74,25 +74,25 @@ public class VariablesTheme {
         System.out.println("Переменная №2 " + num2);
 
         //Вывод символов и их кодов;
-        char char1 = 35;
-        char char2 = 38;
-        char char3 = 64;
-        char char4 = 94;
-        char char5 = 95;
+        char codeChar1 = 35;
+        char codeChar2 = 38;
+        char codeChar3 = 64;
+        char codeChar4 = 94;
+        char codeChar5 = 95;
         System.out.println("\nВывод символов и их кодов");
-        System.out.println("35 = " + char1);
-        System.out.println("38 = " + char2);
-        System.out.println("64 = " + char3);
-        System.out.println("94 = " + char4);
-        System.out.println("95 = " + char5);
+        System.out.println("codeChar1 = " + codeChar1);
+        System.out.println("codeChar2 = " + codeChar2);
+        System.out.println("codeChar3 = " + codeChar3);
+        System.out.println("codeChar4 = " + codeChar4);
+        System.out.println("codeChar5 = " + codeChar5);
 
         //Произведение и сумма цифр числа;
-        int numb1 = 345;
-        int numb2 = numb1 / 100;
-        int numb3 = numb1 / 10 % 10;
-        int numb4 = numb1 % 10;
+        int srcNum1 = 345;
+        int numb2 = srcNum1 / 100;
+        int numb3 = srcNum1 / 10 % 10;
+        int numb4 = srcNum1 % 10;
         System.out.println("\nПроизведение и сумма цифр числа");
-        System.out.println("Произведение цифр числа " + (numb2 * numb3 * numb1));
+        System.out.println("Произведение цифр числа " + (numb2 * numb3 * srcNum1));
         System.out.println("Сумма цифр числа " + (numb2 + numb3 + numb4));
 
         //Вывод на консоль ASCII-арт Дюка;
@@ -110,22 +110,22 @@ public class VariablesTheme {
         System.out.println("" + slash + underscore + underscore + underscore + underscore + slash + backslash + underscore + underscore + backslash);
 
         //Отображение количества сотен, десятков и единиц числа;
-        int srcNum = 123;
-        int hundred = srcNum / 100;
-        int tens = srcNum % 100 / 10;
-        int unit = srcNum % 100 % 10;
+        int srcNum2 = 123;
+        int hundred = srcNum2 / 100;
+        int tens = srcNum2 % 100 / 10;
+        int unit = srcNum2 % 10;
         System.out.println("\nОтображение количества сотен, десятков и единиц числа");
-        System.out.println("Деление на 100 отображает сотни, а т.к. int выводит целочисленные значения, остаток не выводится " + hundred);
-        System.out.println("% производит деление с остатком, которое мы делим на десятки " + tens);
-        System.out.println("% производит деление с остатком, % вторично оставляет единицы " + unit); 
+        System.out.println("Количество сотен " + hundred);
+        System.out.println("Количество десятков " + tens);
+        System.out.println("Количество едениц " + unit); 
 
         //Преобразование секунд;
         int time = 86399;
         int hours = time / 3600 ;
         int minutes = time / 60 % 60;
-        int seccond = time % 60;
+        int seconds = time % 60;
         System.out.println("\nПреобразование секунд");
-        System.out.println (hours + ":" + minutes + ":" + seccond);        
+        System.out.println (hours + ":" + minutes + ":" + seconds);        
     }
  } 
 
