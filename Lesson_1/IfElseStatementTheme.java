@@ -81,7 +81,8 @@ public class IfElseStatementTheme {
                 System.out.println("Это цифра");
             } else {
                 System.out.println("\nЭто не буква и не число");
-
+            }
+            
         //Определение суммы вклада и начисленных банком %;
         int deposit = 300000;
         System.out.println("Определение суммы вклада и начисленных банком %");
