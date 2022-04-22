@@ -70,16 +70,17 @@ public class IfElseStatementTheme {
         }
 
         //Определение буквы, числа или символа по их коду;
-        // char symbol = '\u005A';
-        // System.out.println("Определение буквы, числа или символа по их коду");
-        // System.out.println(symbol);
-        // if (Character.isDigit(symbol)) {
-        //     System.out.println("Это число");
-        // } if (Character.isUpperCase(symbol)) {
-        //     System.out.println("Это заглавная буква");
-        // } else {
-        //     System.out.println("Это строчная буква"); 
-        // }
+        char symbol = '\u005A';
+        System.out.println("Определение буквы, числа или символа по их коду");
+        System.out.println(symbol);
+        if ((symbol >= 'A') && (symbol <= 'Z')) {
+            System.out.println("Это заглавная буква");
+            } else if ((symbol >= 'a') && (symbol <= 'z')) {
+                System.out.println("Это строчная буква");
+            } else if ((symbol >= '0') && (symbol <= '1')) {
+                System.out.println("Это цифра");
+            } else {
+                System.out.println("\nЭто не буква и не число");
 
         //Определение суммы вклада и начисленных банком %;
         int deposit = 300000;
@@ -145,9 +146,9 @@ public class IfElseStatementTheme {
             System.out.println("\nТреугольник прямоугольный и его площадь равна: " + Area);
         }   //System.out.println(""underscore * sideC);
 
-        //Подсчет количества банкнот;
-        //int sum = 567 == ((maxB1 * amountB1) + (maxB10 * amountB10) + (maxB50 * amountB50));
-        // B1, B10 и B50 от banknote
+        // Подсчет количества банкнот;
+        // int sum = 567 == ((maxB1 * amountB1) + (maxB10 * amountB10) + (maxB50 * amountB50));
+        // //B1, B10 и B50 от banknote
         // int maxB1 = sum / 1;
         // int maxB10 = sum / 10;
         // int max50 = sum / 50;
