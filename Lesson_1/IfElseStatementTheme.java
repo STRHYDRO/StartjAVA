@@ -116,25 +116,39 @@ public class IfElseStatementTheme {
         //Определение оценки по предметам;
         int history = 59;
         int progr = 91;
+        int grageHystory = 0;
+        float gradeProgr = 0f;
+        int subjectMidle = (history + progr) / 2;
         System.out.println("\nОпределение оценки по предметам");
         if (history <= 60) {
             System.out.println("Оценка по истории = 2");
+            grageHystory = 2;
         } else if (history < 73) {
             System.out.println("Оценка по истории = 3");
+            grageHystory = 3;
         } else if (history < 91) {
             System.out.println("Оценка по истории = 4");
+            grageHystory = 4;
         } else if (history >= 91) {
             System.out.println("Оценка по истории = 5");
+            grageHystory = 5;
         }
         if (progr <= 60) {
             System.out.println("Оценка по програмированию = 2");
+            gradeProgr = 2;
         } else if (progr < 73) {
             System.out.println("Оценка по програмированию = 3");
+             gradeProgr = 3;
         } else if (progr < 91) {
             System.out.println("Оценка по програмированию = 4");
+             gradeProgr = 4;
         } else if (progr >= 91) { 
             System.out.println("Оценка по програмированию = 5");
+             gradeProgr = 5;
         } 
+        float gradeMidle = (gradeProgr + grageHystory) / 2;
+        System.out.println("Средний бал по предметам = " + gradeMidle);
+        System.out.println("Средний процент по предметам = "+ subjectMidle); 
 
         //Расчет прибыли;
         int rent = 5000;
