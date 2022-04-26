@@ -149,6 +149,9 @@ public class IfElseStatementTheme {
         int sideA = 3;
         int sideB = 4;
         int sideC = 5;
+        int legA = 0;
+        int legB = 0;
+        int hypothesis = 0;
         int sideLegA = sideA < sideB ? sideA : sideB;
         int sideLegB = sideC < sideLegA ? sideC : sideB;
         System.out.println("\nОпределение существования треугольника");
@@ -158,23 +161,33 @@ public class IfElseStatementTheme {
             System.out.println("Треугольник не существует.");
         }
         if (sideLegA == sideA && sideLegB == sideB ) {
-            System.out.println("Катеты sideA и sideB, а гипотенуза sideC");
-        } 
-        if (sideLegA == sideA && sideLegB == sideC) {
-            System.out.println("Катеты sideA и sideС, а гипотенуза sideB");
+            System.out.println("Катеты = " + (legA = sideA) + " и " + (legB = sideB) +", а гипотенуза " + (hypothesis = sideC));
         } 
         if (sideLegA == sideB && sideLegB == sideC) {
-            System.out.println("Катеты sideB и sideC, а гипотенуза sideA");
+            System.out.println("Катеты = " + (legA = sideB) + " и " + (legB = sideC) +", а гипотенуза " + (hypothesis = sideA));
         } 
+        if (sideLegA == sideC && sideLegB == sideA) {
+            System.out.println("Катеты = " + (legA = sideC) + " и " + (legB = sideA) +", а гипотенуза " + (hypothesis = sideB));
+        }    
+        if (sideLegA == sideA && sideLegB == sideC) {
+            System.out.println("Катеты = " + (legA = sideA) + " и " + (legB = sideC) +", а гипотенуза " + (hypothesis = sideB));
+        }
+        if (sideLegA == sideC && sideLegB == sideB) {
+            System.out.println("Катеты = " + (legA = sideC) + " и " + (legB = sideB) +", а гипотенуза " + (hypothesis = sideA));
+        }
+        if (sideLegA == sideB && sideLegB == sideA) {
+            System.out.println("Катеты = " + (legA = sideB) + " и " + (legB = sideA) +", а гипотенуза " + (hypothesis = sideC));
+        } 
+        int Area = (legA * legB) / 2;
         if (sideC * sideC == sideA * sideA + sideB * sideB) {
-            int Area = (sideLegA * sideLegB) / 2;
             System.out.println("Треугольник прямоугольный и его площадь равна: " + Area);
         }
         char slash = '\\';
         char slashForward ='|';
         char space =' ';
         char underscore = '_';
-
+        System.out.printf("%6d%n%6d%n%6d%n%6d%n%6d%n%6d", 666666, 55555, 4444, 333, 22, 1);
+        
         //Подсчет количества банкнот;
         int sum = 567;
         int banknote50 = 50;
