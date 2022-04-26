@@ -182,11 +182,7 @@ public class IfElseStatementTheme {
         if (sideC * sideC == sideA * sideA + sideB * sideB) {
             System.out.println("Треугольник прямоугольный и его площадь равна: " + Area);
         }
-        char slash = '\\';
-        char slashForward ='|';
-        char space =' ';
-        char underscore = '_';
-        System.out.printf("%6d%n%6d%n%6d%n%6d%n%6d%n%6d", 666666, 55555, 4444, 333, 22, 1);
+        System.out.printf("\n%1c%1c%n%1c%2c%n%1c%3c%n%1c%1c%1c%1c%1c\n", '|', '\\', '|', '\\', '|', '\\', '|', '_', '_', '_', '\\');
         
         //Подсчет количества банкнот;
         int sum = 567;
