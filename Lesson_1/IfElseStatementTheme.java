@@ -2,8 +2,8 @@ public class IfElseStatementTheme {
 
     public static void main(String[] args) {
         //Перевод псевдокода на язык Java;
-        int age = 32; 
-        System.out.println("\nПеревод псевдокода на язык Java");     
+        System.out.println("\nПеревод псевдокода на язык Java"); 
+        int age = 32;     
         if (age > 20) {
             System.out.println("Уже не подросток");
         } else {
@@ -31,9 +31,9 @@ public class IfElseStatementTheme {
         }
         
         //Поиск максимального и минимального числа;
+        System.out.println("\nПоиск максимального и минимального числа");
         int num1 = 45;
         int num2 = 97;
-        System.out.println("\nПоиск максимального и минимального числа");
         if (num1 > num2) {
             System.out.println("При сравнении чисел 45 и 97 максимальное число: " + num1);
         } else {
@@ -41,12 +41,13 @@ public class IfElseStatementTheme {
         }
         
         //Работа с числом;   
-        int scrNum = -80;
         System.out.println("\nРабота с числом");
+        int scrNum = -80;
         System.out.println(scrNum);
         if (scrNum == 0) {
             System.out.println("Число равно нулю");
-        } else if (scrNum % 2 == 0) {
+        } else { 
+        if (scrNum % 2 == 0) {
             System.out.println("Число является четным");
         } else {
              System.out.println("Число является нечетным");
@@ -55,8 +56,10 @@ public class IfElseStatementTheme {
         } else if (scrNum > 0) {
             System.out.println("Число является положительным");
         }
+        }
 
         //Поиск одинаковых цифр в числах;
+        System.out.println("\nПоиск одинаковых цифр в числах");
         int srcNum1 = 234;
         int srcNum2 = 539;
         int hundred1 = srcNum1 / 100;
@@ -65,7 +68,6 @@ public class IfElseStatementTheme {
         int hundred2 = srcNum2 / 100;
         int tens2 = srcNum2 % 100 / 10;
         int unit2 = srcNum2 % 10;
-        System.out.println("\nПоиск одинаковых цифр в числах");
         if (hundred1 == hundred2) {
             System.out.println("Числа в первом разряде равны друг другу: " + hundred1);
         }
@@ -77,8 +79,8 @@ public class IfElseStatementTheme {
         }
         
         //Определение буквы, числа или символа по их коду;
-        char symbol = '\u005A';
         System.out.println("\nОпределение буквы, числа или символа по их коду");
+        char symbol = '\u005A';
         System.out.println("Символ = "+ symbol);
         if ((symbol >= 'A') && (symbol <= 'Z')) {
             System.out.println("Это заглавная буква");
@@ -91,100 +93,88 @@ public class IfElseStatementTheme {
         }
 
         //Определение суммы вклада и начисленных банком %;
-        int deposit = 300000;
-        double procent =1;
         System.out.println("\nОпределение суммы вклада и начисленных банком %");
+        int deposit = 300000;
+        double percent = 1;
+        double addPercent = 1;
         if (deposit < 100000) {
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + (procent = deposit * 0.5));
+            addPercent = (percent = deposit * 0.5);
+            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
         } else if (deposit < 300000) {
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + (procent = deposit * 0.7));
+            addPercent = (percent = deposit * 0.7);
+            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
         } else {
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + (procent = deposit * 0.1));
+            addPercent = (percent = deposit * 0.1);
+            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
         }
-        double summ = (deposit + procent);
+        double summ = (deposit + addPercent * 0.1);
         System.out.println("Сумма с процентами = " + summ);
 
         //Определение оценки по предметам;
-        int history = 59;
-        int progr = 91;
+        System.out.println("\nОпределение оценки по предметам");
+        int historyRating = 59;
+        int progrRating = 91;
         int grageHystory = 0;
         double gradeProgr = 1;
-        System.out.println("\nОпределение оценки по предметам");
-        if (history <= 60) {
+        if (historyRating <= 60) {
             System.out.println("Оценка по истории = " + (grageHystory = 2));
-        } else if (history < 73) {
+        } else if (historyRating < 73) {
             System.out.println("Оценка по истории = " + (grageHystory = 3));
-        } else if (history < 91) {
+        } else if (historyRating < 91) {
             System.out.println("Оценка по истории = " + (grageHystory = 4));
-        } else if (history >= 91) {
+        } else if (historyRating >= 91) {
             System.out.println("Оценка по истории = " + (grageHystory = 5));
         }
-        if (progr <= 60) {
+        if (progrRating <= 60) {
             System.out.println("Оценка по программированию = " + (gradeProgr = 2));
-        } else if (progr < 73) {
+        } else if (progrRating < 73) {
             System.out.println("Оценка по программированию = " + (gradeProgr = 3));
-        } else if (progr < 91) {
+        } else if (progrRating < 91) {
             System.out.println("Оценка по программированию = " + (gradeProgr = 4));
-        } else if (progr >= 91) { 
+        } else if (progrRating >= 91) { 
             System.out.println("Оценка по программированию = " + (gradeProgr = 5));
         } 
-        int subjectMidle = (history + progr) / 2;
+        int subjectMidle = (historyRating + progrRating) / 2;
         double gradeMidle = (gradeProgr + grageHystory) / 2;
         System.out.println("Средний бал по предметам = " + gradeMidle);
         System.out.println("Средний процент по предметам = "+ subjectMidle); 
 
         //Расчет прибыли;
+        System.out.println("\nРасчет прибыли");
         int rent = 5000;
         int income = 15000;
         int price = 9000;
         int profitYear = (income - price - rent) * 12;
-        System.out.println("\nРасчет прибыли");
         if (profitYear > 0) {
-            System.out.println("Прибыль продавца за год = " + "+" + profitYear);
+            System.out.println("Прибыль продавца за год = +" + profitYear);
         } else {
             System.out.println("Прибыль продавца за год = " + profitYear);
         }
 
         //Определение существования треугольника;
+        System.out.println("\nОпределение существования треугольника");
         int sideA = 3;
         int sideB = 4;
         int sideC = 5;
-        int legA = 0;
-        int legB = 0;
-        int hypothesis = 0;
         int sideLegA = sideA < sideB ? sideA : sideB;
         int sideLegB = sideC < sideLegA ? sideC : sideB;
-        System.out.println("\nОпределение существования треугольника");
-        if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
-            System.out.println("Треугольник существует.");
-        } else {
+        if  (!(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA)) {
             System.out.println("Треугольник не существует.");
+        } else {
+            System.out.println("Треугольник существует.");
         }
-        if (sideLegA == sideA && sideLegB == sideB ) {
-            System.out.println("Катеты = " + (legA = sideA) + " и " + (legB = sideB) +", а гипотенуза " + (hypothesis = sideC));
-        } 
-        if (sideLegA == sideB && sideLegB == sideC) {
-            System.out.println("Катеты = " + (legA = sideB) + " и " + (legB = sideC) +", а гипотенуза " + (hypothesis = sideA));
-        } 
-        if (sideLegA == sideC && sideLegB == sideA) {
-            System.out.println("Катеты = " + (legA = sideC) + " и " + (legB = sideA) +", а гипотенуза " + (hypothesis = sideB));
-        }    
-        if (sideLegA == sideA && sideLegB == sideC) {
-            System.out.println("Катеты = " + (legA = sideA) + " и " + (legB = sideC) +", а гипотенуза " + (hypothesis = sideB));
-        }
-        if (sideLegA == sideC && sideLegB == sideB) {
-            System.out.println("Катеты = " + (legA = sideC) + " и " + (legB = sideB) +", а гипотенуза " + (hypothesis = sideA));
-        }
-        if (sideLegA == sideB && sideLegB == sideA) {
-            System.out.println("Катеты = " + (legA = sideB) + " и " + (legB = sideA) +", а гипотенуза " + (hypothesis = sideC));
-        } 
-        int Area = (legA * legB) / 2;
         if (sideC * sideC == sideA * sideA + sideB * sideB) {
-            System.out.println("Треугольник прямоугольный и его площадь равна: " + Area);
-        }
+            int area = (sideLegA * sideLegB) / 2;
+            //Значит угол, противолежащий стороне c, является прямым.
+            System.out.println("Гипотенуза = " + sideC + " а катеты = " + sideA + " и " + sideB);
+            System.out.println("Треугольник прямоугольный и его площадь равна: " + area);
+        } else {
+            System.out.println("Треугольник не прямоугольный, и его площадь нужно считать не через теорему Пифагора");
+        }    
         System.out.printf("\n%1c%1c%n%1c%2c%n%1c%3c%n%1c%1c%1c%1c%1c\n", '|', '\\', '|', '\\', '|', '\\', '|', '_', '_', '_', '\\');
         
         //Подсчет количества банкнот;
+        System.out.println("\nПодсчет количества банкнот");
         int sum = 567;
         int banknote50 = 50;
         int banknote10 = 10;
@@ -194,7 +184,6 @@ public class IfElseStatementTheme {
         int maxB10 = balanceB50 / banknote10;
         int maxB1 = balanceB50 % banknote10;
         int sumReverse = (maxB50 * banknote50) + (maxB10 * banknote10) + (maxB1 * banknote1);
-        System.out.println("\nПодсчет количества банкнот");
         System.out.println("Количество купюр по 50 = " + maxB50);
         System.out.println("Количество купюр по 10 = " + maxB10);
         System.out.println("Количество купюр по 1 = " + maxB1);
