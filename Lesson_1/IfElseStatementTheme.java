@@ -47,15 +47,16 @@ public class IfElseStatementTheme {
         if (scrNum == 0) {
             System.out.println("Число равно нулю");
         } else { 
-        if (scrNum % 2 == 0) {
-            System.out.println("Число является четным");
-        } else {
-             System.out.println("Число является нечетным");
-        } if (scrNum < 0) {
-            System.out.println("Число является отрицательным");
-        } else if (scrNum > 0) {
-            System.out.println("Число является положительным");
-        }
+            if (scrNum % 2 == 0) {
+                System.out.println("Число является четным");
+            } else {
+                System.out.println("Число является нечетным");
+            }
+            if (scrNum < 0) {
+                System.out.println("Число является отрицательным");
+            } else if (scrNum > 0) {
+                System.out.println("Число является положительным");
+            }
         }
 
         //Поиск одинаковых цифр в числах;
@@ -95,45 +96,45 @@ public class IfElseStatementTheme {
         //Определение суммы вклада и начисленных банком %;
         System.out.println("\nОпределение суммы вклада и начисленных банком %");
         int deposit = 300000;
-        double percent = 1;
-        double addPercent = 1;
+        double percent = 0;
         if (deposit < 100000) {
-            addPercent = (percent = deposit * 0.5);
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
+            percent = 0.05;
         } else if (deposit < 300000) {
-            addPercent = (percent = deposit * 0.7);
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
+            percent = 0.07;
         } else {
-            addPercent = (percent = deposit * 0.1);
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
+            percent = 0.1;
         }
-        double summ = (deposit + addPercent * 0.1);
-        System.out.println("Сумма с процентами = " + summ);
+        double addPercent = deposit * percent;
+        System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " + addPercent);
+        double sum = (deposit + addPercent);
+        System.out.println("Сумма с процентами = " + sum);
 
         //Определение оценки по предметам;
         System.out.println("\nОпределение оценки по предметам");
         int historyRating = 59;
         int progrRating = 91;
         int grageHystory = 0;
-        double gradeProgr = 1;
+        double gradeProgr = 0;
         if (historyRating <= 60) {
-            System.out.println("Оценка по истории = " + (grageHystory = 2));
+            grageHystory = 2;
         } else if (historyRating < 73) {
-            System.out.println("Оценка по истории = " + (grageHystory = 3));
+            grageHystory = 3;
         } else if (historyRating < 91) {
-            System.out.println("Оценка по истории = " + (grageHystory = 4));
+            grageHystory = 4;
         } else if (historyRating >= 91) {
-            System.out.println("Оценка по истории = " + (grageHystory = 5));
+            grageHystory = 5;
         }
         if (progrRating <= 60) {
-            System.out.println("Оценка по программированию = " + (gradeProgr = 2));
+            gradeProgr = 2;
         } else if (progrRating < 73) {
-            System.out.println("Оценка по программированию = " + (gradeProgr = 3));
+            gradeProgr = 3;
         } else if (progrRating < 91) {
-            System.out.println("Оценка по программированию = " + (gradeProgr = 4));
-        } else if (progrRating >= 91) { 
-            System.out.println("Оценка по программированию = " + (gradeProgr = 5));
-        } 
+            gradeProgr = 4;
+        } else if (progrRating >= 91) {
+            gradeProgr = 5;    
+        }
+        System.out.println("Оценка по истории = " + grageHystory);
+        System.out.println("Оценка по програмированию = " + gradeProgr); 
         int subjectMidle = (historyRating + progrRating) / 2;
         double gradeMidle = (gradeProgr + grageHystory) / 2;
         System.out.println("Средний бал по предметам = " + gradeMidle);
@@ -156,31 +157,31 @@ public class IfElseStatementTheme {
         int sideA = 3;
         int sideB = 4;
         int sideC = 5;
-        int sideLegA = sideA < sideB ? sideA : sideB;
-        int sideLegB = sideC < sideLegA ? sideC : sideB;
         if  (!(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA)) {
             System.out.println("Треугольник не существует.");
         } else {
             System.out.println("Треугольник существует.");
         }
-        if (sideC * sideC == sideA * sideA + sideB * sideB) {
-            int area = (sideLegA * sideLegB) / 2;
-            //Значит угол, противолежащий стороне c, является прямым.
-            System.out.println("Гипотенуза = " + sideC + " а катеты = " + sideA + " и " + sideB);
-            System.out.println("Треугольник прямоугольный и его площадь равна: " + area);
-        } else {
-            System.out.println("Треугольник не прямоугольный, и его площадь нужно считать не через теорему Пифагора");
+            if (!(sideC * sideC == sideA * sideA + sideB * sideB)) {
+                System.out.println("Треугольник не прямоугольный, и его площадь нужно считать не через теорему Пифагора");    
+            } else {
+                int sideLegA = sideA < sideB ? sideA : sideB;
+                int sideLegB = sideC < sideLegA ? sideC : sideB;
+                int area = (sideLegA * sideLegB) / 2;
+                //Значит угол, противолежащий стороне c, является прямым.
+                System.out.println("Гипотенуза = " + sideC + " а катеты = " + sideA + " и " + sideB);
+                System.out.println("Треугольник прямоугольный и его площадь равна: " + area);
         }    
         System.out.printf("\n%1c%1c%n%1c%2c%n%1c%3c%n%1c%1c%1c%1c%1c\n", '|', '\\', '|', '\\', '|', '\\', '|', '_', '_', '_', '\\');
         
         //Подсчет количества банкнот;
         System.out.println("\nПодсчет количества банкнот");
-        int sum = 567;
+        int sum1 = 567;
         int banknote50 = 50;
         int banknote10 = 10;
         int banknote1 = 1;
-        int maxB50 = sum / banknote50;
-        int balanceB50 = sum % banknote50;
+        int maxB50 = sum1 / banknote50;
+        int balanceB50 = sum1 % banknote50;
         int maxB10 = balanceB50 / banknote10;
         int maxB1 = balanceB50 % banknote10;
         int sumReverse = (maxB50 * banknote50) + (maxB10 * banknote10) + (maxB1 * banknote1);
