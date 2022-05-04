@@ -34,12 +34,48 @@ public class CyclesTheme {
         System.out.println("Максимальное число = " + valueMax); 
         System.out.println("Минимальное число = " + valueMin);  
 
-        //Вывод реверсивного числа и суммы его цифр;
-        System.out.println("\nВывод реверсивного числа и суммы его цифр");
+    //Вывод реверсивного числа и суммы его цифр;
+    System.out.println("\nВывод реверсивного числа и суммы его цифр");
         int num = 1234;
-        while () {
+        int sum = 0;
+        System.out.println("Число = " + num);
+        System.out.printf("Цифры числа в обратном порядке = ");
+        while (num > 0) {
+            int numAside = (num % 10);
+            sum += (num % 10);
+            num /= 10;
+            System.out.printf("%2d", numAside);   
+        }
+        System.out.println("\nСумма цифр числа = " + sum);
+
+        //Вывод чисел на консоль в несколько строк;
+        System.out.println("Вывод чисел на консоль в несколько строк");
+            for(int j=0; j<5; j++){
+                for(int i=1; i<24; i = i + 2){ 
             
+                System.out.printf("%2d", i);
+
+    System.out.println("Проверка количества единиц на четность");
+        int num = 3141591;
+        int sum = 0; 
+        while (num > 0) {
+            int numAside = (num % 10);
+            num /= 10;
+            if (numAside == 1) {  
+            sum += numAside;
+        }}
+        System.out.print("Количество едениц = " + sum);
+         if (sum % 2 != 0) {
+            System.out.println("\nКоличество единиц в числе является нечетным");
+        } else {
+            System.out.println("Количество единиц в числе является четным");
         }
 
-    }
+        //Отображение фигур в консоли;
+        System.out.println("Отображение фигур в консоли");
+        
+    }           
 }
+
+
+        
