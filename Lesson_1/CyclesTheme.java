@@ -48,13 +48,23 @@ public class CyclesTheme {
         }
         System.out.println("\nСумма цифр числа = " + sum);
 
-        //Вывод чисел на консоль в несколько строк;
-        System.out.println("Вывод чисел на консоль в несколько строк");
-            for(int j=0; j<5; j++){
-                for(int i=1; i<24; i = i + 2){ 
-            
-                System.out.printf("%2d", i);
+    //Вывод чисел на консоль в несколько строк;
+    System.out.println("Вывод чисел на консоль в несколько строк");
+    int numFive = 0;
+    for(int i = 1; i < 24; i += 2) {
+        numFive++;
+        System.out.printf("%4d", i);
+        if (numFive == 5) {
+        System.out.println(); 
+        numFive = 0;
+        }
+    }
+    for (int j = numFive; j < 5; j++) {
+        System.out.printf("%4d", 0);
+    }
+    System.out.println();
 
+    //Проверка количества единиц на четность;
     System.out.println("Проверка количества единиц на четность");
         int num = 3141591;
         int sum = 0; 
@@ -63,7 +73,8 @@ public class CyclesTheme {
             num /= 10;
             if (numAside == 1) {  
             sum += numAside;
-        }}
+            }
+        }
         System.out.print("Количество едениц = " + sum);
          if (sum % 2 != 0) {
             System.out.println("\nКоличество единиц в числе является нечетным");
@@ -71,9 +82,35 @@ public class CyclesTheme {
             System.out.println("Количество единиц в числе является четным");
         }
 
-        //Отображение фигур в консоли;
-        System.out.println("Отображение фигур в консоли");
-        
+    //Отображение фигур в консоли;
+    System.out.println("Отображение фигур в консоли");
+    //для прямоугольника только for;
+        for (int i = 0; i <= 5; i++){
+            for(int j = 0; j <= 10; j++){
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    //для прямоугольного треугольника только while;    
+
+
+    //Вывод таблицы умножения Пифагора;
+    System.out.println("   Вывод таблицы умножения Пифагора\n");
+    int i = 0;
+    int j = 0;
+    System.out.printf("    |");
+    for(i=2; i<10; i++) {
+        System.out.printf("%3d ", i);
+        }
+    System.out.printf("\n----|----------------");
+    System.out.printf("----------------\n");
+    for(i=2; i<10; i++) {
+        System.out.printf("%3d |", i);
+        for(j=2; j<10; j++) {
+            System.out.printf("%3d ", i*j);
+            } 
+            System.out.println();
+                
     }           
 }
 
