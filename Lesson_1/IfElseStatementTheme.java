@@ -35,9 +35,9 @@ public class IfElseStatementTheme {
         int num1 = 45;
         int num2 = 97;
         if (num1 > num2) {
-            System.out.println("При сравнении чисел 45 и 97 максимальное число: " + num1);
+            System.out.println("При сравнении чисел" + num1 + " и " + num2 + "максимальное число: " + num1);
         } else {
-            System.out.println("При сравнении чисел 45 и 97 максимальное число: " + num2);
+            System.out.println("При сравнении чисел" + num1 + " и " + num2 + "максимальное число: " + num2);
         }
         
         //Работа с числом;   
@@ -134,7 +134,7 @@ public class IfElseStatementTheme {
             gradeProgr = 5;    
         }
         System.out.println("Оценка по истории = " + grageHystory);
-        System.out.println("Оценка по програмированию = " + gradeProgr); 
+        System.out.println("Оценка по программированию = " + gradeProgr); 
         int subjectMidle = (historyRating + progrRating) / 2;
         double gradeMidle = (gradeProgr + grageHystory) / 2;
         System.out.println("Средний бал по предметам = " + gradeMidle);
@@ -157,22 +157,25 @@ public class IfElseStatementTheme {
         int sideA = 3;
         int sideB = 4;
         int sideC = 5;
-        if  (!(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA)) {
-            System.out.println("Треугольник не существует.");
-        } else {
+        if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
             System.out.println("Треугольник существует.");
-        }
             if (!(sideC * sideC == sideA * sideA + sideB * sideB)) {
-                System.out.println("Треугольник не прямоугольный, и его площадь нужно считать не через теорему Пифагора");    
-            } else {
-                int sideLegA = sideA < sideB ? sideA : sideB;
-                int sideLegB = sideC < sideLegA ? sideC : sideB;
-                int area = (sideLegA * sideLegB) / 2;
-                //Значит угол, противолежащий стороне c, является прямым.
-                System.out.println("Гипотенуза = " + sideC + " а катеты = " + sideA + " и " + sideB);
-                System.out.println("Треугольник прямоугольный и его площадь равна: " + area);
+            System.out.println("Треугольник не прямоугольный, и его площадь нужно считать не через теорему Пифагора");    
+        } else {
+            int sideLegA = sideA < sideB ? sideA : sideB;
+            int sideLegB = sideC < sideLegA ? sideC : sideB;
+            int area = (sideLegA * sideLegB) / 2;
+            //Значит угол, противолежащий стороне c, является прямым.
+            System.out.println("Гипотенуза = " + sideC + " а катеты = " + sideA + " и " + sideB);
+            System.out.println("Треугольник прямоугольный и его площадь равна: " + area);
         }    
-        System.out.printf("\n%1c%1c%n%1c%2c%n%1c%3c%n%1c%1c%1c%1c%1c\n", '|', '\\', '|', '\\', '|', '\\', '|', '_', '_', '_', '\\');
+        System.out.println("|\\");
+        System.out.println("| \\");
+        System.out.println("|  \\");
+        System.out.println("|___\\");
+        } else {
+            System.out.println("Треугольник не существует.");
+        }
         
         //Подсчет количества банкнот;
         System.out.println("\nПодсчет количества банкнот");
