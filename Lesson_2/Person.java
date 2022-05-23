@@ -8,6 +8,7 @@ public class Person {
 	boolean learnJava() {
 		return true;
 	}
+
 	void move() {
 		System.out.println("Я иду");	
 	}
@@ -16,12 +17,11 @@ public class Person {
 		System.out.println("Я уснул");
 	}
 
-	void sit () {
+	void sit() {
 		System.out.println("Сел");
-		
 	}
+
 	void speak() {
 		System.out.println("Не спать! Учиться, учиться и учиться");
 	}
-
 }
