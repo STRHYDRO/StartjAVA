@@ -49,9 +49,9 @@ public class Calculator {
                 result *= num1;
             }
             break;
-        case'%': 
-        result = num1 % num2;
-        break;
+        case '%': 
+            result = num1 % num2;
+            break;
         }  
     }  
 }
