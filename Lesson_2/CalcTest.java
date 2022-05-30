@@ -7,6 +7,7 @@ public class CalcTest {
         System.out.println("Calculator test\n");
         String choice = "";
         String no = "no";
+        String yes = "yes";
         do {
             System.out.println("Введите первое число");
             calcTest.setNum1(scanner.nextInt());
@@ -24,8 +25,16 @@ public class CalcTest {
             } else {
                 System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
             }
-            System.out.println("\nХотите продолжить вычисления? [yes/no]:");  
+            System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();
+            switch (choice) {
+                case (!(choice.equals(yes))): 
+                    System.out.println("\nХотите продолжить вычисления? [yes/no]:");
+                    choice = scanner.nextLine();
+                    break;
+                default:
+                    break;
+            }
         } while (!(choice.equals(no)));
     }
 }
