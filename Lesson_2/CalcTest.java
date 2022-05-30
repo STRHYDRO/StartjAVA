@@ -27,10 +27,6 @@ public class CalcTest {
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();
-            while (!(choice.equals(yes))) {
-                    System.out.println("\nХотите продолжить вычисления? [yes/no]:");
-                    choice = scanner.nextLine();
-            }
         } while (!(choice.equals(no)));
     }
 }
