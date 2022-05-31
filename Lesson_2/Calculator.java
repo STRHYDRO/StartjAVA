@@ -4,33 +4,37 @@ public class Calculator {
     private double num2;
     private char sign;
     double result = 0;
+    String choice = "";
+    String no = "no";
+    String yes = "yes";
 
     public double getNum1() {
         return num1;
-    }
-
-    public double getNum2() {
-    return num2;
-    }
-
-    public char getSign() {
-    return sign;
     }
 
     public void setNum1(double num1) {
         this.num1 = num1;
     }
 
+    public double getNum2() {
+        return num2;
+    }
+
     public void setNum2(double num2) {
         this.num2 = num2;
+    }
+
+    public char getSign() {
+        return sign;
     }
 
     public void setSign(char sign) {
         this.sign = sign;
     }
 
-    public void check() {
-    switch (sign) {
+    public void calculate() {
+    if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {    
+        switch (sign) {
         case '+':
             result = num1 + num2;
             break;
@@ -52,6 +56,32 @@ public class Calculator {
         case '%': 
             result = num1 % num2;
             break;
+            }  
+    } else {
+        System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
+    }
+    }
+
+    public void printOut() {
+        if (result % 1 == 0) {
+            System.out.printf("%.0f %c %.0f = %.0f", getNum1(), getSign(), getNum2(), result);
+        } else {
+            System.out.printf("%.0f %c %.0f = %.2f", getNum1(), getSign(), getNum2(), result);
         }  
-    }  
+    } 
+
+    public void yesNo() {
+        do {
+        System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
+        //choice = scanner.nextLine();
+        while (!(choice.equals(no))) {
+            if (!(choice.equals(yes))) {
+                System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
+                //choice = scanner.nextLine();   
+            } else { 
+                break;  
+            }
+        }
+        } while (!(choice.equals(no)));
+    }                       
 }
