@@ -68,20 +68,5 @@ public class Calculator {
         } else {
             System.out.printf("%.0f %c %.0f = %.2f", getNum1(), getSign(), getNum2(), result);
         }  
-    } 
-
-    public void yesNo() {
-        do {
-        System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
-        //choice = scanner.nextLine();
-        while (!(choice.equals(no))) {
-            if (!(choice.equals(yes))) {
-                System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
-                //choice = scanner.nextLine();   
-            } else { 
-                break;  
-            }
-        }
-        } while (!(choice.equals(no)));
-    }                       
+    }                      
 }
