@@ -15,17 +15,17 @@ public class CalcTest {
             calcTest.setNum2(scanner.nextInt());
             calcTest.calculate();
             calcTest.printOut();
-                System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
-                calcTest.choice = scanner.nextLine();
-                calcTest.choice = scanner.nextLine();
-                while (!(calcTest.choice.equals(calcTest.no))) {
-                    if (!(calcTest.choice.equals(calcTest.yes))) {
-                        System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
-                        calcTest.choice = scanner.nextLine();   
-                    } else { 
-                        break;  
-                    }
+            System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
+            calcTest.choice = scanner.nextLine();
+            calcTest.choice = scanner.nextLine();
+            while (!(calcTest.choice.equals(calcTest.no))) {
+                if (!(calcTest.choice.equals(calcTest.yes))) {
+                    System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
+                    calcTest.choice = scanner.nextLine();   
+                } else { 
+                    break;  
                 }
+            }
         } while (!(calcTest.choice.equals(calcTest.no)));
     }
 }
