@@ -6,8 +6,8 @@ public class CalcTest {
         Calculator calcTest = new Calculator();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Calculator test\n");
-        String choice;
-        do {
+        String choice = "yes";
+        while (choice.equals("yes")) {
             System.out.println("Введите первое число");
             calcTest.setNum1(scanner.nextInt());
             System.out.println("Введите знак математической операции");
@@ -16,12 +16,15 @@ public class CalcTest {
             calcTest.setNum2(scanner.nextInt());
             calcTest.calculate();
             calcTest.printOut();
-            do {
-                System.out.println("\nХотите продолжить вычисления ? [yes/no]:");
+            while (!choice.equals("no")) {
+                System.out.println("\nХотите продолжить вычисления? [yes/no]:");
                 choice = scanner.nextLine();
                 choice = scanner.nextLine();
-            } while (!((choice.equals("no")) || (choice.equals("yes"))));
-        } while (!(choice.equals("no")));
+                if (choice.equals("yes")) {
+                    break;
+                }
+            }
+        } 
     } 
 }
 
