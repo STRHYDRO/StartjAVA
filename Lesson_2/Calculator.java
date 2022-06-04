@@ -4,9 +4,6 @@ public class Calculator {
     private double num2;
     private char sign;
     double result = 0;
-    String choice = "";
-    String no = "no";
-    String yes = "yes";
 
     public double getNum1() {
         return num1;
@@ -33,32 +30,32 @@ public class Calculator {
     }
 
     public void calculate() {
-    if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {    
-        switch (sign) {
-        case '+':
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;
-            break;
-        case '/':
-            result = num1 / num2;
-            break;
-        case '^': 
-            result = 1;
-            for (double i = 1; i <= num2; i++) {
-                result *= num1;
-            }
-            break;
-        case '%': 
-            result = num1 % num2;
-            break;
+        if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {    
+            switch (sign) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                case '^': 
+                    result = 1;
+                    for (double i = 1; i <= num2; i++) {
+                        result *= num1;
+                    }
+                    break;
+                case '%': 
+                    result = num1 % num2;
+                    break;
             }  
-    } else {
+        } else {
         System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
-    }
+        }
     }
 }                      
