@@ -61,12 +61,4 @@ public class Calculator {
         System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
     }
     }
-
-    public void printOut() {
-        if (result % 1 == 0) {
-            System.out.printf("%.0f %c %.0f = %.0f", getNum1(), getSign(), getNum2(), result);
-        } else {
-            System.out.printf("%.0f %c %.0f = %.2f", getNum1(), getSign(), getNum2(), result);
-        }  
-    }                      
-}
+}                      
