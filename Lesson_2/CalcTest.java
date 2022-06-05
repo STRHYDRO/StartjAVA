@@ -19,7 +19,7 @@ public class CalcTest {
                 scanner.nextLine();
                 calc.calculate();
                 String format = result % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f";
-                System.out.printf(format, calc.getNum1(), calc.getSign(), calc.getNum2(), result); 
+                System.out.printf(format, calc.getNum1(), calc.getSign(), calc.getNum2(), calc.getResult()); 
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();     

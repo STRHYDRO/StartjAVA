@@ -3,7 +3,7 @@ public class Calculator {
     private double num1;
     private double num2;
     private char sign;
-    double result = 0;
+    private double result = 0;
 
     public double getNum1() {
         return num1;
@@ -29,6 +29,10 @@ public class Calculator {
         this.sign = sign;
     }
 
+    public double getResult() {
+        return result;
+    }
+       
     public void calculate() {
         if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {    
             switch (sign) {
@@ -55,7 +59,7 @@ public class Calculator {
                     break;
             }  
         } else {
-        System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
+            System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
     }
 }                      
