@@ -7,7 +7,6 @@ public class CalcTest {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Calculator test\n");
         String choice = "yes";
-        double result = 0;
         do {
             if ("yes".equals(choice)) {
                 System.out.println("Введите первое число");
@@ -18,7 +17,7 @@ public class CalcTest {
                 calc.setNum2(scanner.nextInt());
                 scanner.nextLine();
                 calc.calculate();
-                String format = result % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f";
+                String format = calc.getResult() % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f";
                 System.out.printf(format, calc.getNum1(), calc.getSign(), calc.getNum2(), calc.getResult()); 
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
