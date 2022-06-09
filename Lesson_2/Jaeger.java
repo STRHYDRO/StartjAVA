@@ -1,13 +1,14 @@
 public class Jaeger {
 
 	private String modelName;
-	private String mark;
+	private int mark;
 	private String origin;
-	private float height;
-	private float weight;
+	private double height;
+	private double weight;
 	private int speed;
 	private int strength;
 	private int armor;
+	private int murder;
 
 	public String getModelName() {
 		return modelName;
@@ -17,11 +18,11 @@ public class Jaeger {
 		this.modelName = modelName;
 	}
 
-	public String getMark() {
+	public int getMark() {
 		return mark;
 	}
 
-	public void setMark(String mark) {
+	public void setMark(int mark) {
 		this.mark = mark;
 	}
 
@@ -33,19 +34,19 @@ public class Jaeger {
 		this.origin = origin;
 	}
 
-	public float getHeight() {
+	public double getHeight() {
 		return height;
 	}
 
-	public void setHeight(float height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 
-	public float getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(float weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
@@ -57,19 +58,39 @@ public class Jaeger {
 		this.speed = speed;
 	}
 
-	public int getStreight() {
-		return streight;
+	public int getStrength() {
+		return strength;
 	}
 
-	public void setStreight(float streight) {
-		this.streight = streight;
+	public void setStrength(int strength) {
+		this.strength = strength;
 	}
 
 	public int getArmor() {
 		return armor;
 	}
 
-	public void setArmor(float armor) {
+	public void setArmor(int armor) {
 		this.armor = armor;
+	}
+
+	public int getMurder() {
+		return murder;
+	}
+
+	public void setMurder(int murder) {
+		this.murder = murder;
+	}
+
+	public void liveStatus() {
+		System.out.println("\nСтатус робота: Destroyed");
+	}
+
+	public void lauching() {
+		System.out.println("\nДата спуска на воду: 2 ноября 2019 года");
+	}
+
+	public void murders() {
+		System.out.printf("Убил %d кайдзю", getMurder());
 	}
 }
