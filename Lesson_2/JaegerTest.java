@@ -2,38 +2,42 @@ import java.util.Scanner;
 
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger jaeger = new Jaeger();
+        Jaeger strikerEureka = new Jaeger();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Striker Eureka\n");
+        System.out.println("jaeger Striker Eureka\n");
         System.out.println("Введите имя модели робота");
-        jaeger.setModelName(scanner.nextLine());
+        strikerEureka.setModelName(scanner.nextLine());
         System.out.println("Введите номер поколения");
-        jaeger.setMark(scanner.nextInt());
+        strikerEureka.setMark(scanner.nextInt());
         scanner.nextLine();
         System.out.println("Введите страну производства");
-        jaeger.setOrigin(scanner.nextLine());
+        strikerEureka.setOrigin(scanner.nextLine());
         System.out.println("Введите высоту робота");
-        jaeger.setHeight(scanner.nextDouble());
+        strikerEureka.setHeight(scanner.nextDouble());
         System.out.println("Введите вес робота");
-        jaeger.setWeight(scanner.nextDouble());
+        strikerEureka.setWeight(scanner.nextDouble());
         System.out.println("Введите скорость робота");
-        jaeger.setSpeed(scanner.nextInt());
+        strikerEureka.setSpeed(scanner.nextInt());
         System.out.println("Введите силу атаки робота");
-        jaeger.setStrength(scanner.nextInt());
+        strikerEureka.setStrength(scanner.nextInt());
         System.out.println("Введите мощность брони");
-        jaeger.setArmor(scanner.nextInt());
+        strikerEureka.setArmor(scanner.nextInt());
         System.out.println("Введите количество убитых кайдзю");
-        jaeger.setMurder(scanner.nextInt());
-        System.out.printf("\nМодель робота = %s \nНомер поколения: Mark-%d%n", jaeger.getModelName(), jaeger.getMark());
-        System.out.printf("Страна производства = %s \nВысота робота = %.1f метров%n", jaeger.getOrigin(), jaeger.getHeight());
-        System.out.printf("Вес робота = %.0f тонн \nСкорость робота = %d%n", jaeger.getWeight(), jaeger.getSpeed());
-        System.out.printf("Сила робота = %d \nЗащита робота = %d", jaeger.getStrength(), jaeger.getArmor());
-        jaeger.lauching();
-        jaeger.murders();
-        jaeger.liveStatus();
+        strikerEureka.setMurder(scanner.nextInt());
+        System.out.printf("\nМодель робота = %s \nНомер поколения: Mark-%d%n", strikerEureka.getModelName(), strikerEureka.getMark());
+        System.out.printf("Страна производства = %s \nВысота робота = %.1f метров%n", strikerEureka.getOrigin(), strikerEureka.getHeight());
+        System.out.printf("Вес робота = %.0f тонн \nСкорость робота = %d%n", strikerEureka.getWeight(), strikerEureka.getSpeed());
+        System.out.printf("Сила робота = %d \nЗащита робота = %d", strikerEureka.getStrength(), strikerEureka.getArmor());
+        strikerEureka.lauching();
+        strikerEureka.murders();
+        strikerEureka.liveStatus();
     }
-}
 
+    Jaeger CrimsonTyphoon = new Jaeger();
+    public CrimsonTyphoon(String modelName, int mark, String origin, double height, double weight, int speed, int strenght, int armor, int murder) {
+        modelName
+    }
+}    
 
 
 
