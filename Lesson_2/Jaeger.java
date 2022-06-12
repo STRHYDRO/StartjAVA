@@ -1,94 +1,54 @@
 public class Jaeger {
 
-	private String modelName;
-	private int mark;
-	private double height;
-	private double weight;
-	private int speed;
-	private int strength;
-	private int armor;
-	private int murder;
-	private String status;
-	private String lauching;
+	private String modelName = "Striker Eureka";
+	private int mark = 5;
+	private double height = 76.2;
+	private double weight = 1850;
+	private int speed = 10;
+	private int strength = 10;
+	private int armor = 9;
+	private int murder = 11;
+	private String status = "Desabled";
+	private String lauching = "November 2, 2019";
 
 	public String getModelName() {
 		return modelName;
-	}
-
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
 	}
 
 	public int getMark() {
 		return mark;
 	}
 
-	public void setMark(int mark) {
-		this.mark = mark;
-	}
-
 	public double getHeight() {
 		return height;
-	}
-
-	public void setHeight(double height) {
-		this.height = height;
 	}
 
 	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
-
 	public int getSpeed() {
 		return speed;
-	}
-
-	public void setSpeed(int speed) {
-		this.speed = speed;
 	}
 
 	public int getStrength() {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
 	public int getArmor() {
 		return armor;
-	}
-
-	public void setArmor(int armor) {
-		this.armor = armor;
 	}
 
 	public int getMurder() {
 		return murder;
 	}
 
-	public void setMurder(int murder) {
-		this.murder = murder;
-	}
-
 	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getLauching() {
 		return lauching;
-	}
-
-	public void setLauching(String lauching) {
-		this.lauching = lauching;
 	}
 
 	public void liveStatus() {
@@ -103,17 +63,27 @@ public class Jaeger {
 		System.out.printf("Убил %d кайдзю", getMurder());
 	}
 
+	public Jaeger() {}
+
 	public Jaeger(String modelName, int mark, double height, double weight, int speed, 
-        int strenght, int armor, int murder, String status, String lauching) {
-    modelName = "crimsonTyphoon";
-    mark = 4;
-    height = 76.2;
-    weight = 1722;
-    speed = 9;
-    strenght = 8;
-    armor = 6;
-    murder = 7;
-    status = "desabled";
-    lauching = "22 августа 2018 года";
-    } 
+            int strength, int armor, int murder, String status, String lauching) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
+        this.murder = murder;
+        this.status = status;
+        this.lauching = lauching;
+    }    
+
+	@Override
+    public String toString() {
+    	return String.format("\nМодель робота = %s \nНомер поколения: Mark-%d \nВысота робота = %.1f метров" +
+    			"\nВес робота = %.0f тонн \nСкорость робота = %d \nСила робота = %d" +
+    			"\nЗащита робота = %d \nДата спуска на воду: %s \nУбил %d кайдзю \nСтатус робота: %s ", modelName, mark, +
+				height, weight, speed, strength, armor, lauching, murder, status);    
+    }
 }
