@@ -11,7 +11,7 @@ public class JaegerTest {
         jaegerTest.liveStatus();
 
         Jaeger crimsonTyphoon = new Jaeger("Crimson Typhoon", 4, 76.2, 1722, 9, 8, 6, 7, "Desabled", "August 22, 2018");
-        System.out.println(crimsonTyphoon);
+            System.out.println(crimsonTyphoon);
     }   
 }    
 
