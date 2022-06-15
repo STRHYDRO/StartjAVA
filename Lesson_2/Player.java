@@ -1,30 +1,38 @@
 public class Player {
 
-	private String namePlayer;
-	private int numPlayer;
+	private String name;
+	private int numPlayer1;
+	private int numPlayer2;
 	
- 	public String getNamePlayer() {
- 		return namePlayer;
+ 	public String getName() {
+ 		return name;
  	}
 
- 	public int getNumPlayer() {
- 		return numPlayer;
+ 	public int getNumPlayer1() {
+ 		return numPlayer1;
  	}
 
- 	public void setNumPlayer(int numPlayer) {
- 		this.numPlayer = numPlayer;
+ 	public void setNumPlayer1(int numPlayer1) {
+ 		this.numPlayer1 = numPlayer1;
  	}
-    
+
+	public int getNumPlayer2() {
+ 		return numPlayer2;
+ 	}
+
+ 	public void setNumPlayer2(int numPlayer2) {
+ 		this.numPlayer2 = numPlayer2;
+ 	} 
+ 
     public Player() {}
 
-	public Player(String namePlayer) {
-		this.namePlayer = namePlayer;
-		//this.numPlayer = numPlayer; 
+	public Player(String name) {
+		this.name = name; 
 	}
 
 	@Override
 	public String toString() {
-        return String.format("Имя игрока : %s", namePlayer);
+        return String.format(name);
     }
 }
 
