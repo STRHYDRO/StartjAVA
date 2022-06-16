@@ -6,11 +6,11 @@ public class GuessNumber {
     Player player = new Player();
     int gameNum;
 
-    public void game() {
-        System.out.println("Игрок " + player + " введите целое число от 0 до 100");
-        play.setNumPlayer1(scanner.nextInt());
-        gameNum = play.getNumPlayer1();
-    }
+    // public void game() {
+    //     System.out.print("Игрок введите целое число от 0 до 100");
+    //     play.setNumPlayer1(scanner.nextInt());
+    //     gameNum = play.getNumPlayer1();
+    // }
 
     int randomNumber = (int) (Math.random() * (100 + 1));
     // if (gameNum() > 0 && gameNum() % 1 == 0) {
@@ -28,6 +28,8 @@ public class GuessNumber {
     //     }    
     // } else { 
         //System.out.println("Вы ввели не подходящее число, вводите только целые положителные числа");
+
+    
 }
 
 
