@@ -13,7 +13,9 @@ public class GuessNumberTest {
         System.out.println("Введите имя второго игрока");
         Player player2 = new Player(scan.nextLine());
         do {
+            if ("yes".equals(choice)) {
             guessNumber.game();
+            }
             System.out.println("\nХотите продолжить игру? [yes/no]:");
             choice = scan.nextLine();     
         } while(!"no".equals(choice));

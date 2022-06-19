@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class GuessNumber {
      
     Scanner scan = new Scanner(System.in); 
@@ -11,8 +12,8 @@ public class GuessNumber {
 
     public void game() {
         do {
-                counter++;
-                String choice = (counter % 2 != 0) ? player : player2;
+            counter++;
+            String choice = (counter % 2 != 0) ? player : player2;
             if (play.getNumPlayer() > 0 && play.getNumPlayer() % 1 == 0) {
                 if (play.getNumPlayer() == randomNumber) {
                     System.out.printf("Победил игрок : ", choice)
