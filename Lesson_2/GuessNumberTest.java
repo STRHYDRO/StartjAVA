@@ -6,6 +6,7 @@ public class GuessNumberTest {
         System.out.println("Игра: угадай число_2\n");
         Scanner scan = new Scanner(System.in);
         GuessNumber guessNumber = new GuessNumber();
+        Player play = new Player();
         String choice = "yes";
         System.out.println("Введите имя первого игрока");
         Player player = new Player(scan.nextLine());
