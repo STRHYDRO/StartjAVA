@@ -1,29 +1,29 @@
 public class Player {
 
-	private String name;
-	private int numPlayer;
-	
- 	public String getName() {
- 		return name;
- 	}
+    private String name;
+    private int num;
 
- 	public int getNumPlayer() {
- 		return numPlayer;
- 	}
+    // public Player(String name) {
+    //     this.name = name; 
+    // }
 
- 	public void setNumPlayer(int numPlayer) {
- 		this.numPlayer = numPlayer;
- 	}
- 
-    public Player() {}
-
-	public Player(String name) {
-		this.name = name; 
-	}
-
-	@Override
-	public String toString() {
-        return String.format(name);
+    public Player(String name) {
+        this.name = name; 
     }
+    
+    public String getName() {
+        return name;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+ 
+
+
 }
 

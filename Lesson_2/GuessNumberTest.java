@@ -5,16 +5,16 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         System.out.println("Игра: угадай число_2\n");
         Scanner scan = new Scanner(System.in);
-        GuessNumber guessNumber = new GuessNumber();
-        Player play = new Player();
+        // Player player = new Player();
+        // GuessNumber guessNumber = new GuessNumber();
         String choice = "yes";
         System.out.println("Введите имя первого игрока");
-        Player player = new Player(scan.nextLine());
+        GuessNumber player = new GuessNumber(scan.nextLine());
         System.out.println("Введите имя второго игрока");
-        Player player2 = new Player(scan.nextLine());
+        GuessNumber player2 = new GuessNumber(scan.nextLine());
         do {
             if ("yes".equals(choice)) {
-            guessNumber.game();
+                guessNumber.play();
             }
             System.out.println("\nХотите продолжить игру? [yes/no]:");
             choice = scan.nextLine();     
