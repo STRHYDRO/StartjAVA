@@ -5,13 +5,14 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         System.out.println("Игра: угадай число_2\n");
         Scanner scan = new Scanner(System.in);
-        // Player player = new Player();
-        // GuessNumber guessNumber = new GuessNumber();
+        GuessNumber guessNumber = new GuessNumber();
         String choice = "yes";
         System.out.println("Введите имя первого игрока");
-        GuessNumber player = new GuessNumber(scan.nextLine());
+        Player player = new Player(scan.nextLine());
+        GuessNumber guessNumber1 = new GuessNumber(player.getName());
         System.out.println("Введите имя второго игрока");
-        GuessNumber player2 = new GuessNumber(scan.nextLine());
+        Player player2 = new Player(scan.nextLine());
+        GuessNumber guessNumber2 = new GuessNumber(player2.getName());
         do {
             if ("yes".equals(choice)) {
                 guessNumber.play();
