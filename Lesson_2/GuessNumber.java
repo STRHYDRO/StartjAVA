@@ -3,27 +3,28 @@ import java.util.Scanner;
 public class GuessNumber {
      
     Scanner scan = new Scanner(System.in); 
-    Player player = new Player();
-    Player player2 = new Player();
+    Player player;
     private int counter;
-    private int randomNumber = (int) (Math.random() * (100 + 1));
+    private int randomNumber;
     private String gamerName;
-    private String name;
-    
+    private String player1;
+    private String player2;
+
     public GuessNumber() {}
 
-    public GuessNumber(String name) {
-        this.name = name;
+    public GuessNumber(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
-    public String getName() {
-        return name;
+    public void randomNum() {
+        randomNumber = (int) (Math.random() * (100 + 1));
     }
 
     public void play() {
         do {
             counter++;
-            gamerName = (counter % 2 != 0) ? player.getName() : name;
+            gamerName = (counter % 2 != 0) ? player1: player2;
             System.out.printf("Игрок %s введите целое число от 0 до 100\n", gamerName);
             player.setNum(scan.nextInt());
             scan.nextLine();

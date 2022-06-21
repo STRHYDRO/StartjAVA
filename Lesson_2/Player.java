@@ -3,7 +3,9 @@ public class Player {
     private String name;
     private int num;
 
-    public Player() {}
+    public Player(Player player) {
+        this.name = player.name;
+    }
 
     public Player(String name) {
         this.name = name; 
