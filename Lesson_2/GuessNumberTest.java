@@ -8,9 +8,9 @@ public class GuessNumberTest {
         // GuessNumber guessNumber = new GuessNumber();
         String choice = "yes";
         System.out.println("Введите имя первого игрока");
-        Player player1 = new Player(scan.nextLine(), 0);
+        Player player1 = new Player(scan.nextLine());
         System.out.println("Введите имя второго игрока");
-        Player player2 = new Player(scan.nextLine(), 0);
+        Player player2 = new Player(scan.nextLine());
         GuessNumber guessNumber = new GuessNumber(player1, player2);
         do {
             if ("yes".equals(choice)) {
