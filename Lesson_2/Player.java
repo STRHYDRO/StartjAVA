@@ -3,12 +3,9 @@ public class Player {
     private String name;
     private int num;
 
-    public Player(Player player) {
-        this.name = player.name;
-    }
-
-    public Player(String name) {
-        this.name = name; 
+    public Player(String name, int num) {
+        this.name = name;
+        this.num = num;  
     }
 
     public String getName() {

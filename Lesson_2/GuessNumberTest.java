@@ -8,15 +8,11 @@ public class GuessNumberTest {
         // GuessNumber guessNumber = new GuessNumber();
         String choice = "yes";
         System.out.println("Введите имя первого игрока");
-        Player player1 = new Player(scan.nextLine());
+        Player player1 = new Player(scan.nextLine(), 0);
         System.out.println("Введите имя второго игрока");
-        Player player2 = new Player(scan.nextLine());
+        Player player2 = new Player(scan.nextLine(), 0);
         GuessNumber guessNumber = new GuessNumber(player1, player2);
-
-        System.out.println(guessNumber);
-        System.out.println(player2);
         do {
-            guessNumber.randomNum();
             if ("yes".equals(choice)) {
                 guessNumber.randomNum();
                 guessNumber.play();
