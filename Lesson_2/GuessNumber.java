@@ -18,15 +18,11 @@ public class GuessNumber {
     }
 
     public void choice() {
-        if (player1.equals(gamerName)) {
-            gamerName = player2;
-            return;
-        } else {
-            gamerName = player1;
-        } 
+        gamerName = player1 == gamerName ? player2 : player1; 
     } 
 
     public void play() {
+
         do {
             choice();    
             System.out.printf("Игрок %s введите целое число от 0 до 100\n", gamerName.getName());
@@ -34,7 +30,7 @@ public class GuessNumber {
             scan.nextLine();
             if (gamerName.getNum() > 0 && gamerName.getNum() % 1 == 0) {
                 if (gamerName.getNum() == randomNumber) {
-                    System.out.printf("Победил игрок : %s", gamerName);
+                    System.out.printf("Победил игрок : %s", gamerName.getName());
                     break;     
                 } else if (gamerName.getNum() < randomNumber) {
                     System.out.printf("число %s меньше того, что загадал компьютер\n", gamerName.getNum()); 
