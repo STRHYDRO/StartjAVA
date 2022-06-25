@@ -6,37 +6,37 @@ public class GuessNumber {
     private int randomNumber;
     private Player player1;
     private Player player2;
-    private Player gamerName;
+    private Player currName;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
 
-    public void choice() {
-        gamerName = player1 == gamerName ? player2 : player1; 
-    } 
-
     public void play() {
         randomNumber = (int) (Math.random() * (100 + 1));
         do {
-            choice();    
-            System.out.printf("Игрок %s введите целое число от 0 до 100\n", gamerName.getName());
-            gamerName.setNum(scan.nextInt());
+            changePlayer();    
+            System.out.printf("Игрок %s введите целое число от 0 до 100\n", currName.getName());
+            currName.setNum(scan.nextInt());
             scan.nextLine();
-            if (gamerName.getNum() > 0 && gamerName.getNum() % 1 == 0) {
-                if (gamerName.getNum() == randomNumber) {
-                    System.out.printf("Победил игрок : %s", gamerName.getName());
+            if (currName.getNum() > 0 && currName.getNum() % 1 == 0) {
+                if (currName.getNum() == randomNumber) {
+                    System.out.printf("Победил игрок : %s", currName.getName());
                     break;     
-                } else if (gamerName.getNum() < randomNumber) {
-                    System.out.printf("число %s меньше того, что загадал компьютер\n", gamerName.getNum()); 
-                } else if (gamerName.getNum() > randomNumber) {
-                    System.out.printf("число %s больше того, что загадал компьютер\n", gamerName.getNum());
+                } else if (currName.getNum() < randomNumber) {
+                    System.out.printf("число %s меньше того, что загадал компьютер\n", currName.getNum()); 
+                } else if (currName.getNum() > randomNumber) {
+                    System.out.printf("число %s больше того, что загадал компьютер\n", currName.getNum());
                 }
             } else {        
                 System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
             }
         } while(true);        
     }
+
+    private void changePlayer() {
+        currName = player1 == currName ? player2 : player1; 
+    } 
 }
 
