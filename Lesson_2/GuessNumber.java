@@ -13,16 +13,12 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    public void randomNum() {
-        randomNumber = (int) (Math.random() * (100 + 1));
-    }
-
     public void choice() {
         gamerName = player1 == gamerName ? player2 : player1; 
     } 
 
     public void play() {
-        randomNum();
+        randomNumber = (int) (Math.random() * (100 + 1));
         do {
             choice();    
             System.out.printf("Игрок %s введите целое число от 0 до 100\n", gamerName.getName());
