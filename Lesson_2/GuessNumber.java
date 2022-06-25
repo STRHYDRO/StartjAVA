@@ -22,7 +22,7 @@ public class GuessNumber {
     } 
 
     public void play() {
-
+        randomNum();
         do {
             choice();    
             System.out.printf("Игрок %s введите целое число от 0 до 100\n", gamerName.getName());
