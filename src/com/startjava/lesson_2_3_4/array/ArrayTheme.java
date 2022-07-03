@@ -23,6 +23,7 @@ public class ArrayTheme {
         }
         for (int num:nums) {
             System.out.printf("% d", num);
+            System.out.println();
         }
     }
 }
