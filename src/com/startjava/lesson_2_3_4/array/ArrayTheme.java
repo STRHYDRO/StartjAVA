@@ -24,12 +24,33 @@ public class ArrayTheme {
             nums[i] += i;
         }
         for (int num:nums) {
-            int myltiply =
+//            int myltiply;
+//            for (int i = 0; i < nums.length; i++) {
+//            myltiply *= nums;
+//            }
             char symbol = (num < nums.length - 1) ? '*' : '=';
-            System.out.printf("%d%c", num, symbol);
+            System.out.printf("%d%c%d", num, symbol, );
 //            System.out.print();
         }
 
-        //
+//      Удаление элементов массива;
+        System.out.println("Удаление элементов массива");
+
+
+
+//      Вывод элементов массива лесенкой в обратном порядке;
+        System.out.println("Вывод элементов массива лесенкой в обратном порядке");
+
+
+
+
+//      Генерация уникальных чисел;
+        System.out.println("Генерация уникальных чисел");
+
+
+
+
+//      Сдвиг элементов массива;
+        System.out.println("Сдвиг элементов массива");
     }
 }
