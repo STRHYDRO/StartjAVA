@@ -18,20 +18,18 @@ public class ArrayTheme {
 
 //      Вывод произведения элементов массива;
         System.out.println("\nВывод произведения элементов массива");
-        char symbol;
+        //char symbol;
         int[] nums = new int[10];
         for (int i = 0; i <nums.length; i++){
             nums[i] += i;
         }
         for (int num:nums) {
-            if (num < 9) {
-                symbol = '*';
-            } else {
-                symbol = '=';
-            }
-//            num <= 8 ? symbol = '*' : symbol = '=';
+            int myltiply =
+            char symbol = (num < nums.length - 1) ? '*' : '=';
             System.out.printf("%d%c", num, symbol);
 //            System.out.print();
         }
+
+        //
     }
 }
