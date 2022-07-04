@@ -1,10 +1,12 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.util.Arrays;
+
 public class ArrayTheme {
 
     public static void main(String[] args) {
-//      Риверс значений массива;
-        System.out.println("Риверс значений массива");
+//      Реверс значений массива;
+        System.out.println("Реверс значений массива");
         int[] numbers = {1, 2, 3, 4, 5, 6, 7};
         for (int num:numbers) {
             System.out.printf("% d", num);
@@ -16,14 +18,20 @@ public class ArrayTheme {
 
 //      Вывод произведения элементов массива;
         System.out.println("\nВывод произведения элементов массива");
-        char myltiply = '*';
-        int[] nums = new int[9];
+        char symbol;
+        int[] nums = new int[10];
         for (int i = 0; i <nums.length; i++){
-            nums[i] = i + 1;
+            nums[i] += i;
         }
         for (int num:nums) {
-            System.out.printf("% d", num);
-
+            if (num < 9) {
+                symbol = '*';
+            } else {
+                symbol = '=';
+            }
+//            num <= 8 ? symbol = '*' : symbol = '=';
+            System.out.printf("%d%c", num, symbol);
+//            System.out.print();
         }
     }
 }
