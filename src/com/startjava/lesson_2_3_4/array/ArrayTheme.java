@@ -11,9 +11,18 @@ public class ArrayTheme {
         for (int num:numbers) {
             System.out.printf("% d", num);
         }
-        System.out.println();
-        for (int i = numbers.length - 1; i >= 0; i--) {
-            System.out.printf("% d", numbers[i]);
+        int start = 0;
+        int end = numbers.length - 1;
+        while (start < end) {
+            int reverse = numbers[start];
+            numbers[start] = numbers[end];
+            numbers[end] = reverse;
+            start++;
+            end--;
+        }
+        System.out.print("\n");
+        for (int num:numbers) {
+            System.out.printf("% d", num);
         }
 
 //      Вывод произведения элементов массива;
@@ -37,10 +46,16 @@ public class ArrayTheme {
         for (int i = 0; i < fractionals.length; i++) {
             fractionals[i] = Math.random();
         }
+        int midpoint = fractionals.length / 2;
+        System.out.println("Исходный массив");
         for (double fractional:fractionals) {
             System.out.printf("%.2f  ", fractional);
         }
+        System.out.println("\nИзмененный массив");
 
+        for (double fractional:fractionals) {
+            System.out.printf("%.2f  ", fractional);
+        }
 
 //      Вывод элементов массива лесенкой в обратном порядке;
         System.out.println("\nВывод элементов массива лесенкой в обратном порядке");
