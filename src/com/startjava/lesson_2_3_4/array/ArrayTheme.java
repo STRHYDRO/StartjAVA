@@ -46,17 +46,21 @@ public class ArrayTheme {
         for (int i = 0; i < fractionals.length; i++) {
             fractionals[i] = Math.random();
         }
-        int midpoint = fractionals.length / 2;
         System.out.println("Исходный массив");
         for (double fractional:fractionals) {
             System.out.printf("%.2f  ", fractional);
         }
+        int midpoint = fractionals.length / 2;
         System.out.println("\nИзмененный массив");
-
+        for (int i = midpoint; i < fractionals.length; i++) {
+            fractionals[i] = 0;
+        }
         for (double fractional:fractionals) {
             System.out.printf("%.2f  ", fractional);
         }
-
+        int difference = fractionals.length - midpoint;
+        System.out.print("\nКоличество обнуленных ячеек = " + difference);
+        
 //      Вывод элементов массива лесенкой в обратном порядке;
         System.out.println("\nВывод элементов массива лесенкой в обратном порядке");
 
