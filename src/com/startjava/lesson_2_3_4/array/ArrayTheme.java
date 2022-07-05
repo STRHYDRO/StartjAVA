@@ -18,39 +18,43 @@ public class ArrayTheme {
 
 //      Вывод произведения элементов массива;
         System.out.println("\nВывод произведения элементов массива");
-        //char symbol;
         int[] nums = new int[10];
-        for (int i = 0; i <nums.length; i++){
+        for (int i = 0; i < nums.length; i++){
             nums[i] += i;
         }
+        int result = 1;
         for (int num:nums) {
-//            int myltiply;
-//            for (int i = 0; i < nums.length; i++) {
-//            myltiply *= nums;
-//            }
+            if (!(num == 0 | num == 9)) { result *= num; }
             char symbol = (num < nums.length - 1) ? '*' : '=';
-            System.out.printf("%d%c%d", num, symbol, );
-//            System.out.print();
+                System.out.printf("%d%c", num, symbol);
         }
+        System.out.print(result);
+        System.out.printf("\nnums[0] = %d, nums[9] = %d", nums[0], nums[9]);
 
 //      Удаление элементов массива;
-        System.out.println("Удаление элементов массива");
-
+        System.out.println("\nУдаление элементов массива");
+        double[] fractionals = new double[15];
+        for (int i = 0; i < fractionals.length; i++) {
+            fractionals[i] = Math.random();
+        }
+        for (double fractional:fractionals) {
+            System.out.printf("%.2f  ", fractional);
+        }
 
 
 //      Вывод элементов массива лесенкой в обратном порядке;
-        System.out.println("Вывод элементов массива лесенкой в обратном порядке");
+        System.out.println("\nВывод элементов массива лесенкой в обратном порядке");
 
 
 
 
 //      Генерация уникальных чисел;
-        System.out.println("Генерация уникальных чисел");
+        System.out.println("\nГенерация уникальных чисел");
 
 
 
 
 //      Сдвиг элементов массива;
-        System.out.println("Сдвиг элементов массива");
+        System.out.println("\nСдвиг элементов массива");
     }
 }
