@@ -63,13 +63,23 @@ public class ArrayTheme {
         
 //      Вывод элементов массива лесенкой в обратном порядке;
         System.out.println("\nВывод элементов массива лесенкой в обратном порядке");
+        char[] alphabets = new char [26];
+        for (int i = 0; i < alphabets.length; i++) {
+            alphabets[i] = (char) (i + 65);
+        }
+        String stringAlphabet = new String(alphabets);
+        System.out.print(stringAlphabet);
+
+
+
 
 
 
 
 //      Генерация уникальных чисел;
         System.out.println("\nГенерация уникальных чисел");
-
+        int[] unique = new int [30];
+        unique[i] = 60 + Math.random()
 
 
 
