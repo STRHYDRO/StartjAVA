@@ -79,7 +79,7 @@ public class ArrayTheme {
 //      Генерация уникальных чисел;
         System.out.println("\nГенерация уникальных чисел");
         int[] unique = new int [30];
-        unique[i] = 60 + Math.random()
+        unique[i] = 60 + (int) Math.random();
 
 
 
