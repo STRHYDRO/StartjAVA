@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class ArrayTheme {
@@ -79,11 +80,27 @@ public class ArrayTheme {
 //      Генерация уникальных чисел;
         System.out.println("\nГенерация уникальных чисел");
         int[] unique = new int [30];
-        unique[i] = 60 + (int) Math.random();
+        for (int i = 0; i < unique.length; i++) {
+            unique[i] = 60 + (int) (Math.random() * 100 ) ;
 
-
+        }
+        boolean uniqueSorted = false;
+        int buffer;
+        while(!uniqueSorted) {
+            uniqueSorted = true;
+            for (int i = unique.length; i >= 0; i--) {
+                if(unique[i] > unique[i+ 1]){
+                    uniqueSorted = false;
+                    buffer = unique[i];
+                    unique[i] = unique[i+1];
+                    unique[i+1] = buffer;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(unique));
 
 //      Сдвиг элементов массива;
         System.out.println("\nСдвиг элементов массива");
+        String[] shift =  {"", "AA", "", "", "BBB", "C", "", "DDDD"};
     }
 }
