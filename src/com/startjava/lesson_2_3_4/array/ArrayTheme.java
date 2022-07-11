@@ -1,6 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.sql.SQLOutput;
+import java.util.Random;
 import java.util.Arrays;
 
 public class ArrayTheme {
@@ -27,7 +27,7 @@ public class ArrayTheme {
         }
 
 //      Вывод произведения элементов массива;
-        System.out.println("\nВывод произведения элементов массива");
+        System.out.println("\n\nВывод произведения элементов массива");
         int[] nums = new int[10];
         for (int i = 0; i < nums.length; i++){
             nums[i] += i;
@@ -42,7 +42,7 @@ public class ArrayTheme {
         System.out.printf("\nnums[0] = %d, nums[9] = %d", nums[0], nums[9]);
 
 //      Удаление элементов массива;
-        System.out.println("\nУдаление элементов массива");
+        System.out.println("\n\nУдаление элементов массива");
         double[] fractionals = new double[15];
         for (int i = 0; i < fractionals.length; i++) {
             fractionals[i] = Math.random();
@@ -63,44 +63,39 @@ public class ArrayTheme {
         System.out.print("\nКоличество обнуленных ячеек = " + difference);
         
 //      Вывод элементов массива лесенкой в обратном порядке;
-        System.out.println("\nВывод элементов массива лесенкой в обратном порядке");
+        System.out.println("\n\nВывод элементов массива лесенкой в обратном порядке");
         char[] alphabets = new char [26];
-        for (int i = 0; i < alphabets.length; i++) {
+        int i;
+        for (i = alphabets.length - 1; i >= 0; i--) {
             alphabets[i] = (char) (i + 65);
         }
-        String stringAlphabet = new String(alphabets);
-        System.out.print(stringAlphabet);
-
-
-
-
-
-
-
-//      Генерация уникальных чисел;
-        System.out.println("\nГенерация уникальных чисел");
-        int[] unique = new int [30];
-        for (int i = 0; i < unique.length; i++) {
-            unique[i] = 60 + (int) (Math.random() * 100 ) ;
-
-        }
-        boolean uniqueSorted = false;
-        int buffer;
-        while(!uniqueSorted) {
-            uniqueSorted = true;
-            for (int i = unique.length; i >= 0; i--) {
-                if(unique[i] > unique[i+ 1]){
-                    uniqueSorted = false;
-                    buffer = unique[i];
-                    unique[i] = unique[i+1];
-                    unique[i+1] = buffer;
-                }
+        String stringAlphabet = new String (alphabets);
+//        System.out.printf("%s%n", stringAlphabet);
+        int m = 0;
+        int j = 0;
+        int alphabet = alphabets.length-1;
+        while (m < alphabets.length) {
+            alphabet--;
+            j = 0;
+            while (j < m) {
+                System.out.print (alphabets[alphabet]);
+                j++;
             }
+            System.out.print("\n");
+            m++;
         }
-        System.out.println(Arrays.toString(unique));
+//      Генерация уникальных чисел;
+        System.out.println("\n\nГенерация уникальных чисел");
+        Random random = new Random();
+        int[] unique = new int [30];
+        for (int k = 0; k < unique.length; k++) {
+            unique[k] = random.nextInt(40) + 60 ;
+        }
+        Arrays.sort(unique);
+        System.out.printf("%2s %n", Arrays.toString(unique));
 
 //      Сдвиг элементов массива;
-        System.out.println("\nСдвиг элементов массива");
+        System.out.println("\n\nСдвиг элементов массива");
         String[] shift =  {"", "AA", "", "", "BBB", "C", "", "DDDD"};
     }
 }
