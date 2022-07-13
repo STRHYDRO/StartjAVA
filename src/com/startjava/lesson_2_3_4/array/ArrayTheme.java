@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Arrays;
 
@@ -9,7 +10,7 @@ public class ArrayTheme {
 //      Реверс значений массива;
         System.out.println("Реверс значений массива");
         int[] numbers = {1, 2, 3, 4, 5, 6, 7};
-        for (int num:numbers) {
+        for (int num : numbers) {
             System.out.printf("% d", num);
         }
         int start = 0;
@@ -22,21 +23,21 @@ public class ArrayTheme {
             end--;
         }
         System.out.print("\n");
-        for (int num:numbers) {
+        for (int num : numbers) {
             System.out.printf("% d", num);
         }
 
 //      Вывод произведения элементов массива;
         System.out.println("\n\nВывод произведения элементов массива");
         int[] nums = new int[10];
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             nums[i] += i;
         }
         int result = 1;
-        for (int num:nums) {
-            if (!(num == 0 | num == 9)) { result *= num; }
-            char symbol = (num < nums.length - 1) ? '*' : '=';
-                System.out.printf("%d%c", num, symbol);
+        for (int i = 1; i < nums.length - 1; i++) {
+            result *= nums[i];
+            char symbol = (nums[i] < nums.length - 2) ? '*' : '=';
+            System.out.printf("%d%c", i, symbol);
         }
         System.out.print(result);
         System.out.printf("\nnums[0] = %d, nums[9] = %d", nums[0], nums[9]);
@@ -48,7 +49,7 @@ public class ArrayTheme {
             fractionals[i] = Math.random();
         }
         System.out.println("Исходный массив");
-        for (double fractional:fractionals) {
+        for (double fractional : fractionals) {
             System.out.printf("%.2f  ", fractional);
         }
         int midpoint = fractionals.length / 2;
@@ -56,46 +57,67 @@ public class ArrayTheme {
         for (int i = midpoint; i < fractionals.length; i++) {
             fractionals[i] = 0;
         }
-        for (double fractional:fractionals) {
-            System.out.printf("%.2f  ", fractional);
+        for (int j = 0; j < fractionals.length; j++) {
+            String format = j < midpoint ? "%.2f  " : "%.0f     ";
+            System.out.printf(format, fractionals[j]);
         }
         int difference = fractionals.length - midpoint;
         System.out.print("\nКоличество обнуленных ячеек = " + difference);
-        
+
 //      Вывод элементов массива лесенкой в обратном порядке;
         System.out.println("\n\nВывод элементов массива лесенкой в обратном порядке");
-        char[] alphabets = new char [26];
-        int i;
-        for (i = alphabets.length - 1; i >= 0; i--) {
-            alphabets[i] = (char) (i + 65);
+        char[] alphabet = new char[26];
+        for (int i = alphabet.length - 1; i >= 0; i--) {
+            alphabet[i] = (char) (90 - i);
         }
-        String stringAlphabet = new String (alphabets);
-//        System.out.printf("%s%n", stringAlphabet);
-        int m = 0;
-        int j = 0;
-        int alphabet = alphabets.length-1;
-        while (m < alphabets.length) {
-            alphabet--;
-            j = 0;
-            while (j < m) {
-                System.out.print (alphabets[alphabet]);
-                j++;
-            }
-            System.out.print("\n");
-            m++;
+        for (int i = 0; i <= alphabet.length; i++) {
+            for (int j = 0; j < i; j++)
+                System.out.print(alphabet[j]);
+                System.out.print("\n");
         }
+
 //      Генерация уникальных чисел;
         System.out.println("\n\nГенерация уникальных чисел");
         Random random = new Random();
-        int[] unique = new int [30];
-        for (int k = 0; k < unique.length; k++) {
-            unique[k] = random.nextInt(40) + 60 ;
+        int[] unique = new int[30];
+        int counter = 0;
+        for (int i = 0; i < unique.length; i++) {
+            unique[i] = random.nextInt(40) + 60;
         }
-        Arrays.sort(unique);
-        System.out.printf("%2s %n", Arrays.toString(unique));
+        for (int i = 0; i < unique.length; i++) {
+            for (int j = i + 1; j < unique.length; j++) {
+                if (unique[i] == unique[j]) {
+                    unique[i] = i + 1;
+                }
+            }
+        }
+        System.out.println();
+        for (int j = 0; j < unique.length; j++) {
+            counter++;
+            if (counter == 11) {
+                System.out.print("\n");
+                counter = 1;
+            }
+            Arrays.sort(unique);
+            System.out.printf("%4s", unique[j]);
+        }
 
 //      Сдвиг элементов массива;
         System.out.println("\n\nСдвиг элементов массива");
-        String[] shift =  {"", "AA", "", "", "BBB", "C", "", "DDDD"};
+        String[] shifts = {"", "AA", "", "", "BBB", "C", "", "DDDD"};
+        int index = shifts.length;
+        for (String shift:shifts) {
+            if (shift.isBlank() == true) {
+                index--;
+            }
+            System.out.println(shift);
+        }
+        System.out.print(index);
+        String[] shiftsCopy = new String[shifts.length];
+        System.arraycopy(shifts, 0, shiftsCopy, 0, index);
+        System.out.print("\n");
+        for (String shiftCopy : shiftsCopy) {
+            System.out.print(shiftCopy);
+        }
     }
 }
