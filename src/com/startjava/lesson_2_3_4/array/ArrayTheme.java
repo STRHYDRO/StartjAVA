@@ -17,7 +17,8 @@ public class ArrayTheme {
             intArr[intArr.length - 1 - i] = buffer;
         }
 
-        System.out.println();;
+        System.out.println();
+        ;
         for (int num : intArr) {
             System.out.printf("% d", num);
         }
@@ -47,21 +48,20 @@ public class ArrayTheme {
         }
         int midpoint = doubleArr.length / 2;
         System.out.println("\nИзмененный массив");
-        if (doubleArr[midpoint] )
-        for (int i = midpoint; i < doubleArr.length; i++) {
-            doubleArr[i] = 0;
-        }
         for (int j = 0; j < doubleArr.length; j++) {
-            String format = j < midpoint ? "%.2f  " : "%.0f     ";
-            System.out.printf(format, doubleArr[j]);
+            if (doubleArr[midpoint] < doubleArr[j])
+                doubleArr[j] = 0;
         }
-        int difference = doubleArr.length - midpoint;
-        System.out.print("\nКоличество обнуленных ячеек = " + difference);
+//            String format = j < midpoint ? "%.2f  " : "%.0f     ";
+//            System.out.printf(format, doubleArr[j]);
+
+//        int difference = doubleArr.length - midpoint;
+//        System.out.print("\nКоличество обнуленных ячеек = " + difference);
 
         System.out.println("\n\nВывод элементов массива лесенкой в обратном порядке");
         char[] alphabetArr = new char[26];
-        for (int i = alphabetArr.length - 1; i >= 0; i--) {
-            alphabetArr[i] = (char) (90 - i);
+        for (int i = 0; i < alphabetArr.length; i++) {
+            alphabetArr[i] = (char) (i + 65);
         }
         for (int i = 0; i <= alphabetArr.length; i++) {
             for (int j = 0; j < i; j++) {
