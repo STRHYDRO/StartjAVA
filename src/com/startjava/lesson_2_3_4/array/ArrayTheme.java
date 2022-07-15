@@ -116,9 +116,10 @@ public class ArrayTheme {
             } else if (!shift.isBlank() && i > 0) {
                 indexPosition[i] += i;
             }
+            System.out.print(shift);
         }
 //        int[] indexPosition = {1, 4, 5, 7};
-
+        System.out.print("\n");
         for (int num : indexPosition) {
             System.out.printf("% d", num);
         }
