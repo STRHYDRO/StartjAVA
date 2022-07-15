@@ -7,6 +7,9 @@ public class Calculator {
     private double num2;
     private char sign;
     private double result = 0;
+    private String exp = "";
+    String[] expression = new String[3];
+//    String[] expression = getExp().split("");
 
     public double getNum1() {
         return num1;
@@ -35,34 +38,48 @@ public class Calculator {
     public double getResult() {
         return result;
     }
-       
-    public void calculate() {
-        if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {    
-            switch (sign) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
-                case '^': 
-                    result = 1;
-                    for (double i = 1; i <= num2; i++) {
-                        result *= num1;
-                    }
-                    break;
-                case '%': 
-                    result = num1 % num2;
-                    break;
-            }  
-        } else {
-            System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
-        }
+
+    public String getExp() {
+        return exp;
     }
+
+    public void setExp(String exp) {
+        this.exp = exp;
+    }
+
+    public void exp() {
+            int num1 = Integer.parseInt(expression[1].trim());
+            System.out.println(num1);
+    }
+
+
+//    public void calculate() {
+//        if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {
+//            switch (sign) {
+//                case '+':
+//                    result = num1 + num2;
+//                    break;
+//                case '-':
+//                    result = num1 - num2;
+//                    break;
+//                case '*':
+//                    result = num1 * num2;
+//                    break;
+//                case '/':
+//                    result = num1 / num2;
+//                    break;
+//                case '^':
+//                    result = 1;
+//                    for (double i = 1; i <= num2; i++) {
+//                        result *= num1;
+//                    }
+//                    break;
+//                case '%':
+//                    result = num1 % num2;
+//                    break;
+//            }
+//        } else {
+//            System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
+//        }
+//    }
 }                      
