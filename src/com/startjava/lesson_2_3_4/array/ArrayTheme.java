@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Arrays;
 
@@ -29,18 +28,18 @@ public class ArrayTheme {
 
 //      Вывод произведения элементов массива;
         System.out.println("\n\nВывод произведения элементов массива");
-        int[] nums = new int[10];
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] += i;
+        int[] numbs = new int[10];
+        for (int i = 0; i < numbs.length; i++) {
+            numbs[i] += i;
         }
         int result = 1;
-        for (int i = 1; i < nums.length - 1; i++) {
-            result *= nums[i];
-            char symbol = (nums[i] < nums.length - 2) ? '*' : '=';
+        for (int i = 1; i < numbs.length - 1; i++) {
+            result *= numbs[i];
+            char symbol = (numbs[i] < numbs.length - 2) ? '*' : '=';
             System.out.printf("%d%c", i, symbol);
         }
         System.out.print(result);
-        System.out.printf("\nnums[0] = %d, nums[9] = %d", nums[0], nums[9]);
+        System.out.printf("\nnumbs[0] = %d, numbs[9] = %d", numbs[0], numbs[9]);
 
 //      Удаление элементов массива;
         System.out.println("\n\nУдаление элементов массива");
@@ -71,9 +70,11 @@ public class ArrayTheme {
             alphabet[i] = (char) (90 - i);
         }
         for (int i = 0; i <= alphabet.length; i++) {
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < i; j++) {
                 System.out.print(alphabet[j]);
+            }
                 System.out.print("\n");
+
         }
 
 //      Генерация уникальных чисел;
@@ -106,46 +107,28 @@ public class ArrayTheme {
         System.out.println("\n\nСдвиг элементов массива");
         String[] shifts = {" ", "AA", " ", " ", "BBB", "C", " ", "DDDD"};
         int indexLength = shifts.length;
-        int[] indexPosition = new int[4];
-        int i = 0;
+        int[] indexPosition = new int[9];
+        int i = -1;
         for (String shift:shifts) {
-            i++;
-            if (shift.isBlank() == false) {
-//                indexLength--;
+            i ++;
+            if (shift.isBlank()) {
+                indexLength--;
+            } else if (!shift.isBlank() && i > 0) {
                 indexPosition[i] += i;
             }
-//            System.out.print(shift);
         }
-
-
-
 //        int[] indexPosition = {1, 4, 5, 7};
-
-//        int m = 0;
-//        for (String shift:shifts) {
-//            m++;
-//            if (!shift.isBlank()) {
-//                indexPosition[m] += m;
-//            }
-//        }
-//        System.out.println(m);
-//        for (int i = 0; i < indexPosition.length; i++) {
-//            String shift = Arrays.toString(shifts);
-//            if (shift.isBlank() == false) {
-//                indexPosition[i] += i;
-//            }
-//        }
 
         for (int num : indexPosition) {
             System.out.printf("% d", num);
         }
-        String[] shiftsCopy = new String[indexLength];
-        for(int i = 0; i < indexLength; i++){
-            System.arraycopy(shifts, indexPosition[i], shiftsCopy, i, 1);
-        }
-        System.out.print("\n");
-        for (String shiftCopy:shiftsCopy) {
-            System.out.print(shiftCopy);
+//        String[] shiftsCopy = new String[indexLength];
+//        for(int i = 0; i < indexLength; i++){
+//            System.arraycopy(shifts, indexPosition[i], shiftsCopy, i, 1);
+//        }
+//        System.out.print("\n");
+//        for (String shiftCopy:shiftsCopy) {
+//            System.out.print(shiftCopy);
 //        }
     }
 }

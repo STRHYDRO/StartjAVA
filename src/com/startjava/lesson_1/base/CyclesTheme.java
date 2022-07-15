@@ -98,16 +98,16 @@ public class CyclesTheme {
         }
         //Прямоугольный треугольник через цикл while;
         System.out.println("\nПрямоугольный треугольник через цикл while");
-        int i = 5; 
-        int j = 0; 
-        while (i > 0) { 
-            j = 0; 
-            while (j < i) { 
-                System.out.print ('#');  
-                j++; 
-            } 
-            System.out.print("\n"); 
-            i--; 
+        int i = 5;
+        int j = 0;
+        while (i > 0) {
+            j = 0;
+            while (j < i) {
+                System.out.print ('#');
+                j++;
+            }
+            System.out.print("\n");
+            i--;
         }
         //Для второго треугольника только do-while;
         System.out.println("\nДля второго треугольника только do-while");
