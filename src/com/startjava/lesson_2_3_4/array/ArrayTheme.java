@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Arrays;
 
@@ -17,8 +18,7 @@ public class ArrayTheme {
             intArr[intArr.length - 1 - i] = buffer;
         }
 
-        System.out.println();
-        ;
+        System.out.println();;
         for (int num : intArr) {
             System.out.printf("% d", num);
         }
@@ -49,14 +49,14 @@ public class ArrayTheme {
         int midpoint = doubleArr.length / 2;
         System.out.println("\nИзмененный массив");
         for (int j = 0; j < doubleArr.length; j++) {
-            if (doubleArr[midpoint] < doubleArr[j])
-                doubleArr[j] = 0;
+            if (doubleArr[j] > doubleArr[midpoint]) {
+                    doubleArr[j] = 0;
+                }
+            String format = j < midpoint ? "%.2f  " : "%.0f     ";
+            System.out.printf(format, doubleArr[j]);
         }
-//            String format = j < midpoint ? "%.2f  " : "%.0f     ";
-//            System.out.printf(format, doubleArr[j]);
-
-//        int difference = doubleArr.length - midpoint;
-//        System.out.print("\nКоличество обнуленных ячеек = " + difference);
+        int difference = doubleArr.length - midpoint;
+        System.out.print("\nКоличество обнуленных ячеек = " + difference);
 
         System.out.println("\n\nВывод элементов массива лесенкой в обратном порядке");
         char[] alphabetArr = new char[26];
@@ -64,7 +64,7 @@ public class ArrayTheme {
             alphabetArr[i] = (char) (i + 65);
         }
         for (int i = 0; i <= alphabetArr.length; i++) {
-            for (int j = 0; j < i; j++) {
+            for (int j = alphabetArr.length - 1; j >= 0; j--) {
                 System.out.print(alphabetArr[j]);
             }
             System.out.println();
@@ -75,17 +75,18 @@ public class ArrayTheme {
         Random random = new Random();
         int[] uniqueArr = new int[30];
         int counter = 0;
+        int min = 60;
+        int max = 101;
         for (int i = 0; i < uniqueArr.length; i++) {
-            uniqueArr[i] = random.nextInt(40) + 60;
+            uniqueArr[i] = random.nextInt(41) + 60;
         }
-        for (int i = 0; i < uniqueArr.length; i++) {
+        for(int i=0; i<uniqueArr.length; i++) {
             for (int j = i + 1; j < uniqueArr.length; j++) {
                 if (uniqueArr[i] == uniqueArr[j]) {
-                    uniqueArr[i] = i + 1;
+                    uniqueArr[i] += 1;
                 }
             }
         }
-        System.out.println();
         for (int j = 0; j < uniqueArr.length; j++) {
             counter++;
             if (counter == 11) {
@@ -125,3 +126,4 @@ public class ArrayTheme {
 //        }
     }
 }
+
