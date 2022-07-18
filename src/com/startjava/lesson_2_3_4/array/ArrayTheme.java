@@ -74,58 +74,26 @@ public class ArrayTheme {
 
         System.out.println("\n\nГенерация уникальных чисел");
         Random random = new Random();
-            int[] uniqueArr = new int[30];
-            int meter = 0;
-            for (int i = 0; i < uniqueArr.length; i++) {
-                uniqueArr[i] = random.nextInt(40) + 60;
-            }
-            Arrays.sort(uniqueArr);
-            int[] bufferArr = new int[uniqueArr.length];
-            System.arraycopy(uniqueArr, 0, bufferArr, 0, uniqueArr.length);
-
-            for (int unique : uniqueArr) {
-                System.out.printf("%d  ", unique);
-            }
-            System.out.println();
-            for (int i = 0; i < bufferArr.length; i++) {
-                System.out.printf("%d  ", bufferArr[i]);
-            }
-            for (int i = 0; i < uniqueArr.length - 1; i++) {
-                for (int j = i + 1; j < bufferArr.length; j++) {
-                    if (uniqueArr[i] == bufferArr[j]) {
-                        uniqueArr[i] -= 1;
+        int[] uniqueArr = new int[30];
+        for (int i = 0; i < uniqueArr.length; i++) {
+            while (true) {
+                boolean label = false;
+                int number = random.nextInt(41) + 60;
+                for (int j = 0; j < i; j++) {
+                    if (number == uniqueArr[j]) {
+                        label = true;
+                        break;
                     }
                 }
-            }
-        System.out.println();
-        Arrays.sort(uniqueArr);
-        for (int unique:uniqueArr) {
-            System.out.printf("%d  ", unique);
-        }
-
-//        int metr = 0;
-//        do {
-//            metr++;
-//            if (uniqueArr[metr] == bufferArr[metr - 1]) {
-//                uniqueArr[metr] = 1;
-//            }
-//        } while(uniqueArr[metr] != bufferArr[metr]);
-//        System.out.println();
-//        for (int unique:uniqueArr) {
-//            System.out.printf("%d  ", unique);
-//        }
-
-        for(int i=0; i<uniqueArr.length-1; i++) {
-            for (int j=i+1; j<uniqueArr.length; j++) {
-                    if (uniqueArr[i] == uniqueArr[j]) {
-                        uniqueArr[i] += 1;
-                    }
+                if (!label) {
+                    uniqueArr[i] = number;
+                    break;
+                }
             }
         }
-
-
+        int meter = 0;
         for (int j = 0; j < uniqueArr.length; j++) {
-           meter++;
+            meter++;
             if (meter == 11) {
                 System.out.println();
                 meter = 1;
@@ -154,12 +122,15 @@ public class ArrayTheme {
             System.out.printf("% d", num);
         }
         String[] shiftsArrCopy = new String[indexLength];
-        for(int i = 0; i < indexLength; i++){
-            System.arraycopy(shiftsArr, indexPosition[i], shiftsArrCopy, i, 1);
+        for(int k = 0; k < indexLength; k++){
+            System.arraycopy(shiftsArr, indexPosition[k], shiftsArrCopy, k, 1);
         }
         System.out.println();
         for (String shiftCopy:shiftsArrCopy) {
             System.out.print(shiftCopy);
         }
+
     }
 }
+
+
