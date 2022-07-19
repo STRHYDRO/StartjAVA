@@ -104,33 +104,26 @@ public class ArrayTheme {
 
         System.out.println("\n\nСдвиг элементов массива");
         String[] shiftsArr = {" ", "AA", " ", " ", "BBB", "C", " ", "DDDD"};
-        int indexLength = shiftsArr.length;
-        int[] indexPosition = new int[9];
-        int i = -1;
+        int scorer = 0;
         for (String shift:shiftsArr) {
-            i ++;
-            if (shift.isBlank()) {
-                indexLength--;
-            } else if (!shift.isBlank()) {
-                indexPosition[i] = i;
+            int indexLenght = 0;
+            if (!shift.isBlank()) {
+                scorer += 1;
+                indexLenght++;
+                System.out.print(scorer);
+            } else {
+                scorer = 0;
             }
-            System.out.print(shift);
+//            System.arraycopy(shiftsArr, scorer, shiftsArrCopy, indexLenght, 3);
+
         }
-//        int[] indexPosition = {1, 4, 5, 7};
-        System.out.println();
-        for (int num : indexPosition) {
-            System.out.printf("% d", num);
-        }
-        String[] shiftsArrCopy = new String[indexLength];
-        for(int k = 0; k < indexLength; k++){
-            System.arraycopy(shiftsArr, indexPosition[k], shiftsArrCopy, k, 1);
-        }
-        System.out.println();
-        for (String shiftCopy:shiftsArrCopy) {
-            System.out.print(shiftCopy);
-        }
+//        System.out.println();
+//        for (String shiftCopy:shiftsArrCopy) {
+//            System.out.print(shiftCopy);
+//        }
+
+
+
 
     }
 }
-
-
