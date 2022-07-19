@@ -91,12 +91,12 @@ public class ArrayTheme {
                 }
             }
         }
-        int meter = 0;
+        counter = 0;
         for (int j = 0; j < uniqueArr.length; j++) {
-            meter++;
-            if (meter == 11) {
+            counter++;
+            if (counter == 11) {
                 System.out.println();
-                meter = 1;
+                counter = 1;
             }
             Arrays.sort(uniqueArr);
             System.out.printf("%4s", uniqueArr[j]);
@@ -104,15 +104,15 @@ public class ArrayTheme {
 
         System.out.println("\n\nСдвиг элементов массива");
         String[] shiftsArr = {" ", "AA", " ", " ", "BBB", "C", " ", "DDDD"};
-        int scorer = 0;
+        counter = 0;
         for (String shift:shiftsArr) {
             int indexLenght = 0;
             if (!shift.isBlank()) {
-                scorer += 1;
+                counter += 1;
                 indexLenght++;
-                System.out.print(scorer);
+                System.out.print(counter);
             } else {
-                scorer = 0;
+                counter = 0;
             }
 //            System.arraycopy(shiftsArr, scorer, shiftsArrCopy, indexLenght, 3);
 
