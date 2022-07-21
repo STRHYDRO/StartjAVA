@@ -105,16 +105,19 @@ public class ArrayTheme {
         System.out.println("\n\nСдвиг элементов массива");
         String[] shiftsArr = {" ", "AA", " ", " ", "BBB", "C", " ", "DDDD"};
         counter = 0;
+//        String[] shiftsArrCopy = new String[meter];
+        int contains = 0;
+        int srcPos = 0;
         for (String shift:shiftsArr) {
-            int indexLenght = 0;
-            if (!shift.isBlank()) {
-                counter += 1;
-                indexLenght++;
-                System.out.print(counter);
+            counter++;
+            if (!shift.isBlank() && contains == 0) {
+                contains++;
+                srcPos = counter - contains;
+                System.out.print(srcPos);
             } else {
-                counter = 0;
+                contains = 0;
             }
-//            System.arraycopy(shiftsArr, scorer, shiftsArrCopy, indexLenght, 3);
+//            System.arraycopy(shiftsArr, srcPos, shiftsArrCopy, meter, 3);
 
         }
 //        System.out.println();
