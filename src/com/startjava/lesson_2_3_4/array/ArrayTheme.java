@@ -18,7 +18,6 @@ public class ArrayTheme {
             intArr[length - 1 - i] = buffer;
         }
         System.out.println();
-        ;
         for (int num : intArr) {
             System.out.printf("% d", num);
         }
