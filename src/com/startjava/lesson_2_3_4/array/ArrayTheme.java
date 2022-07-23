@@ -8,13 +8,14 @@ public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("Реверс значений массива");
         int[] intArr = {1, 2, 3, 4, 5, 6, 7};
+        int length = intArr.length;
         for (int num : intArr) {
             System.out.printf("% d", num);
         }
-        for (int i = 0; i < intArr.length / 2; i++) {
+        for (int i = 0; i < length / 2; i++) {
             int buffer = intArr[i];
-            intArr[i] = intArr[intArr.length - 1 - i];
-            intArr[intArr.length - 1 - i] = buffer;
+            intArr[i] = intArr[length - 1 - i];
+            intArr[length - 1 - i] = buffer;
         }
         System.out.println();
         ;
@@ -24,13 +25,14 @@ public class ArrayTheme {
 
         System.out.println("\n\nВывод произведения элементов массива");
         int[] numArr = new int[10];
-        for (int i = 0; i < numArr.length; i++) {
+        length = numArr.length;
+        for (int i = 0; i < length; i++) {
             numArr[i] = i;
         }
         int result = 1;
-        for (int i = 1; i < numArr.length - 1; i++) {
+        for (int i = 1; i < length - 1; i++) {
             result *= numArr[i];
-            String symbol = (numArr[i] < numArr.length - 2) ? " * " : " = ";
+            String symbol = (numArr[i] < length - 2) ? " * " : " = ";
             System.out.printf("%d%s", i, symbol);
         }
         System.out.print(result);
@@ -38,17 +40,18 @@ public class ArrayTheme {
 
         System.out.println("\n\nУдаление элементов массива");
         double[] doubleArr = new double[15];
-        for (int i = 0; i < doubleArr.length; i++) {
+        length = doubleArr.length;
+        for (int i = 0; i < length; i++) {
             doubleArr[i] = Math.random();
         }
         System.out.println("Исходный массив");
         for (double fractional : doubleArr) {
             System.out.printf("%.2f  ", fractional);
         }
-        int midpoint = doubleArr.length / 2;
+        int midpoint = length / 2;
         System.out.println("\nИзмененный массив");
         int counter = 0;
-        for (int j = 0; j < doubleArr.length; j++) {
+        for (int j = 0; j < length; j++) {
             if (doubleArr[j] > doubleArr[midpoint]) {
                 doubleArr[j] = 0;
                 counter++;
@@ -60,11 +63,12 @@ public class ArrayTheme {
 
         System.out.println("\n\nВывод элементов массива лесенкой в обратном порядке");
         char[] alphabetArr = new char[26];
-        for (int i = 0; i < alphabetArr.length; i++) {
+        length = alphabetArr.length;
+        for (int i = 0; i < length; i++) {
             alphabetArr[i] = (char) (i + 65);
         }
-        for (int i = 0; i <= alphabetArr.length; i++) {
-            int k = alphabetArr.length;
+        for (int i = 0; i <= length; i++) {
+            int k = length;
             for (int j = 0; j < i; j++) {
                 k--;
                 System.out.print(alphabetArr[k]);
@@ -75,7 +79,8 @@ public class ArrayTheme {
         System.out.println("\n\nГенерация уникальных чисел");
         Random random = new Random();
         int[] uniqueArr = new int[30];
-        for (int i = 0; i < uniqueArr.length; i++) {
+        length = uniqueArr.length;
+        for (int i = 0; i < length; i++) {
             while (true) {
                 boolean label = false;
                 int number = random.nextInt(41) + 60;
@@ -92,7 +97,7 @@ public class ArrayTheme {
             }
         }
         counter = 0;
-        for (int j = 0; j < uniqueArr.length; j++) {
+        for (int j = 0; j < length; j++) {
             counter++;
             if (counter == 11) {
                 System.out.println();
@@ -104,31 +109,38 @@ public class ArrayTheme {
 
         System.out.println("\n\nСдвиг элементов массива");
         String[] shiftsArr = {" ", "AA", " ", " ", "BBB", "C", " ", "DDDD"};
-        String[] shiftsArrCopy = new String[shiftsArr.length];
-        counter = 0;
-        int length = 0;
-        int contains = 0;
-        int srcPos = 0;
+        int len = 0;
         for (String shift:shiftsArr) {
-            counter++;
-            if (!shift.isBlank() && contains == 0) {
-                contains++;
-                srcPos = counter - contains;
-//                System.out.print(contains);
-                System.out.print(srcPos);
-            } else {
-                contains = 0;
+            if (!shift.isBlank()) {
+                len++;
             }
-            System.arraycopy(shiftsArr, srcPos, shiftsArrCopy, counter, length);
-
+            System.out.print(shift);
         }
-//        System.out.println();
-//        for (String shiftCopy:shiftsArrCopy) {
-//            System.out.print(shiftCopy);
-//        }
-
-
-
-
+        String[] shiftsArrCopy = new String[len];
+        length = shiftsArr.length;
+        len = 1;
+        int srcPos = 0;
+        int destPos = 0;
+        for (int i = 0; i < length; i++) {
+            if (!shiftsArr[i].isBlank()) {
+                srcPos = i;
+                if (i < length - 1) {
+                    for (int j = i + 1; j < length; j++) {
+                        if (shiftsArr[j].isBlank()) {
+                            break;
+                        }
+                        len++;
+                    }
+                }
+                System.arraycopy(shiftsArr, srcPos, shiftsArrCopy, destPos, len);
+                destPos += len;
+                i += len;
+                len = 1;
+            }
+        }
+        System.out.println();
+        for (String shiftCopy:shiftsArrCopy) {
+            System.out.print(shiftCopy);
+        }
     }
 }
