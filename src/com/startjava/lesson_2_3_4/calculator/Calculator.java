@@ -47,10 +47,22 @@ public class Calculator {
         this.exp = exp;
     }
 
-    public void exp() {
-            int num1 = Integer.parseInt(expression[1].trim());
-            System.out.println(num1);
-    }
+//    public void exp() {    Создание метода разделения строки и записи в массив
+//        if(!getExp.isBlank()) { // Если в выражении нет пробелов, то определи когда закончится число, добавь пробел, определи когда начнется число и добавь  до этого пробел
+    // Разделить введенную строку на элементы с помощью String Split
+    //Записать элементы в массив
+//    }
+    //  Создание метода арифм. операций с помощью массива
+    // Вызов массива
+    // преобразование 1 и 3 элемента в int, 2 элемента в char
+    // 1 элемент присвоен num 1, 3 - num2, 2 элемент в sign
+
+//    }
+
+//    public void exp() {
+//            int num1 = Integer.parseInt(expression[1].trim());
+//            System.out.println(num1);
+//    }
 
 
 //    public void calculate() {
