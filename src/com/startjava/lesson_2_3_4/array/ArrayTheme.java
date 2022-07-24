@@ -1,11 +1,14 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Arrays;
 
 public class ArrayTheme {
 
+
     public static void main(String[] args) {
+
         System.out.println("Реверс значений массива");
         int[] intArr = {1, 2, 3, 4, 5, 6, 7};
         int length = intArr.length;
@@ -18,8 +21,8 @@ public class ArrayTheme {
             intArr[length - 1 - i] = buffer;
         }
         System.out.println();
-        for (int num : intArr) {
-            System.out.printf("% d", num);
+        for (int i = 0; i < length; i ++) {
+            System.out.printf("% d", intArr[i]);
         }
 
         System.out.println("\n\nВывод произведения элементов массива");
@@ -43,14 +46,24 @@ public class ArrayTheme {
         for (int i = 0; i < length; i++) {
             doubleArr[i] = Math.random();
         }
-        System.out.println("Исходный массив");
-        for (double fractional : doubleArr) {
-            System.out.printf("%.2f  ", fractional);
-        }
-        int midpoint = length / 2;
-        System.out.println("\nИзмененный массив");
+        int midpoint = (length / 2) + 2;
         int counter = 0;
+        System.out.println("Исходный массив");
         for (int j = 0; j < length; j++) {
+            counter++;
+            if (counter == midpoint) {
+                System.out.print("    ");
+            }
+                System.out.printf("%.2f  ", doubleArr[j]);
+        }
+        System.out.println("\nИзмененный массив");
+        counter = 0;
+        int lenArray = 0;
+        for (int j = 0; j < length; j++) {
+            lenArray++;
+            if (lenArray == midpoint) {
+                System.out.print("    ");
+            }
             if (doubleArr[j] > doubleArr[midpoint]) {
                 doubleArr[j] = 0;
                 counter++;
@@ -81,15 +94,15 @@ public class ArrayTheme {
         length = uniqueArr.length;
         for (int i = 0; i < length; i++) {
             while (true) {
-                boolean label = false;
+                boolean unique = false;
                 int number = random.nextInt(41) + 60;
                 for (int j = 0; j < i; j++) {
                     if (number == uniqueArr[j]) {
-                        label = true;
+                        unique = true;
                         break;
                     }
                 }
-                if (!label) {
+                if (!unique) {
                     uniqueArr[i] = number;
                     break;
                 }
