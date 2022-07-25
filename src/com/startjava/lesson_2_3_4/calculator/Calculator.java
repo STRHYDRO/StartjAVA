@@ -2,14 +2,12 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    //Калькулятор;
     private double num1;
     private double num2;
     private char sign;
     private double result = 0;
-    private String exp = "";
+    private String exp;
     String[] expression = new String[3];
-//    String[] expression = getExp().split("");
 
     public double getNum1() {
         return num1;
@@ -47,8 +45,26 @@ public class Calculator {
         this.exp = exp;
     }
 
-//    public void exp() {    Создание метода разделения строки и записи в массив
-//        if(!getExp.isBlank()) { // Если в выражении нет пробелов, то определи когда закончится число, добавь пробел, определи когда начнется число и добавь  до этого пробел
+    public void exp() {
+        expression[1] = String.valueOf(exp.split("[0-9]"));
+        for(String arr:expression) {
+            System.out.print(arr);
+        }
+    }
+
+
+//    public void exp() {
+//        expression = getExp().split("[\\+\\-\\*\\/\\^\\%]");
+//            getExp().split("");
+//            if ("[\\+\\-\\*\\/\\^\\%]" == getExp()) {
+//                expression[1] = getExp();
+//            }
+//        System.out.println(expression[1]);
+//            for(String arr:expression) {
+//                System.out.println(" " +arr);
+//            }
+//    }
+//
     // Разделить введенную строку на элементы с помощью String Split
     //Записать элементы в массив
 //    }
