@@ -1,29 +1,29 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.sql.SQLOutput;
+import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.Arrays;
 
 public class ArrayTheme {
-
-
-    public static void main(String[] args) {
-
-        System.out.println("Реверс значений массива");
+    public static void conclusion() {
         int[] intArr = {1, 2, 3, 4, 5, 6, 7};
-        int length = intArr.length;
         for (int num : intArr) {
             System.out.printf("% d", num);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Реверс значений массива");
+        int[] intArr = {1, 2, 3, 4, 5, 6, 7};
+        int length = intArr.length;
+        ArrayTheme.conclusion();
         for (int i = 0; i < length / 2; i++) {
             int buffer = intArr[i];
             intArr[i] = intArr[length - 1 - i];
             intArr[length - 1 - i] = buffer;
         }
         System.out.println();
-        for (int i = 0; i < length; i ++) {
-            System.out.printf("% d", intArr[i]);
-        }
+        ArrayTheme.conclusion();
 
         System.out.println("\n\nВывод произведения элементов массива");
         int[] numArr = new int[10];
