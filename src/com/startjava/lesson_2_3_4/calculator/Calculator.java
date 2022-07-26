@@ -7,7 +7,8 @@ public class Calculator {
     private char sign;
     private double result = 0;
     private String exp;
-    String[] expression = new String[3];
+    String[] parentArr = new String[2];
+    String[] expressionArr = new String[3];
 
     public double getNum1() {
         return num1;
@@ -45,25 +46,30 @@ public class Calculator {
         this.exp = exp;
     }
 
-    public void exp() {
-        expression[1] = String.valueOf(exp.split("[0-9]"));
-        for(String arr:expression) {
-            System.out.print(arr);
-        }
+    public String[] getParentArr() {
+        return parentArr;
     }
 
+    public void setParentArr(String[] parentArr) {
+        this.parentArr = parentArr;
+    }
 
-//    public void exp() {
-//        expression = getExp().split("[\\+\\-\\*\\/\\^\\%]");
-//            getExp().split("");
-//            if ("[\\+\\-\\*\\/\\^\\%]" == getExp()) {
-//                expression[1] = getExp();
-//            }
-//        System.out.println(expression[1]);
-//            for(String arr:expression) {
-//                System.out.println(" " +arr);
-//            }
-//    }
+    public String[] getExpressionArr() {
+        return expressionArr;
+    }
+
+    public void setExpressionArr(String[] expressionArr) {
+        this.expressionArr = expressionArr;
+    }
+
+    public void expression() {
+        parentArr = getExp().split("[\\+\\-\\*\\/\\^\\%]");
+        for (int i = 0; i < parentArr.length; i++) {
+            expressionArr[i] = parentArr[i];
+        }
+        expressionArr[2] = getExp().replaceAll("[0-9]", "");
+    }
+
 //
     // Разделить введенную строку на элементы с помощью String Split
     //Записать элементы в массив
@@ -110,4 +116,4 @@ public class Calculator {
 //            System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
 //        }
 //    }
-}                      
+}
