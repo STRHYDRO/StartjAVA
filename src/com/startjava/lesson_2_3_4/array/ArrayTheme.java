@@ -1,29 +1,22 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.Arrays;
 
 public class ArrayTheme {
 
-    static int[] intArr = {1, 2, 3, 4, 5, 6, 7};
-    public static void invert() {
-        for (int num : intArr) {
-            System.out.printf("% d", num);
-        }
-    }
-
     public static void main(String[] args) {
         System.out.println("Реверс значений массива");
+        int[] intArr = {1, 2, 3, 4, 5, 6, 7};
         int length = intArr.length;
-        invert();
+        printArr(intArr);
         for (int i = 0; i < length / 2; i++) {
             int buffer = intArr[i];
             intArr[i] = intArr[length - 1 - i];
             intArr[length - 1 - i] = buffer;
         }
         System.out.println();
-        invert();
+        printArr(intArr);
 
         System.out.println("\n\nВывод произведения элементов массива");
         int[] numArr = new int[10];
@@ -31,11 +24,10 @@ public class ArrayTheme {
         for (int i = 0; i < length; i++) {
             numArr[i] = i;
         }
-        String format;
         int result = 1;
         for (int i = 1; i < length - 1; i++) {
             result *= numArr[i];
-            System.out.printf("%d%s", i, format = (numArr[i] < length - 2) ? " * " : " = ");
+            System.out.printf("%d%s", i,(numArr[i] < length - 2) ? " * " : " = ");
         }
         System.out.print(result);
         System.out.printf("\nnumArr[0] = %d, numArr[9] = %d", numArr[0], numArr[9]);
@@ -49,26 +41,19 @@ public class ArrayTheme {
         double midpoint = doubleArr[length / 2];
         int counter = 0;
         System.out.println("Исходный массив");
-        for (int j = 0; j < length; j++) {
-            counter++;
-            if (counter == 9) {
+        for (int i = 0; i < length; i++) {
+            if (i == 8) {
                 System.out.println();
             }
-            System.out.printf("%.2f  ", doubleArr[j]);
+            System.out.printf("%.2f  ", doubleArr[i]);
         }
         System.out.println("\nИзмененный массив");
-        counter = 0;
-        int lenArray = 0;
-        for (int j = 0; j < length; j++) {
-            lenArray++;
-            if (lenArray == midpoint) {
-                System.out.print("    ");
-            }
-            if (doubleArr[j] > midpoint) {
-                doubleArr[j] = 0;
+        for (int i = 0; i < length; i++) {
+            if (doubleArr[i] > midpoint) {
+                doubleArr[i] = 0;
                 counter++;
             }
-            System.out.printf(format = doubleArr[j] == 0 ? "%.0f   " : "%.2f   ", doubleArr[j]);
+            System.out.printf(doubleArr[i] == 0 ? "%.0f   " : "%.2f   ", doubleArr[i]);
         }
 
         System.out.print("\nКоличество обнуленных ячеек = " + counter);
@@ -153,6 +138,12 @@ public class ArrayTheme {
         System.out.println();
         for (String shiftCopy : stringsArrCopy) {
             System.out.print(shiftCopy);
+        }
+    }
+
+    private static void printArr(int[] intArr) {
+        for (int num : intArr) {
+            System.out.printf("% d", num);
         }
     }
 }
