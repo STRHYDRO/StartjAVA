@@ -2,6 +2,7 @@ package com.startjava.lesson_2_3_4.calculator;
 
 import java.math.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Calculator {
 
@@ -12,6 +13,7 @@ public class Calculator {
     private String data;
     private String[] parentArr = new String[2];
     private String[] expressionArr = new String[3];
+    private Scanner scanner = new Scanner(System.in);
 
     public double getNum1() {
         return num1;
@@ -37,21 +39,11 @@ public class Calculator {
         this.data = data;
     }
 
-    public void expression() {
-        parentArr = getData().split("[\\s\\+\\-\\*\\/\\^\\%]+");
-        for (int i = 0; i < parentArr.length; i++) {
-            expressionArr[i] = parentArr[i];
-        }
-        expressionArr[2] = getData().replaceAll("\\d\\s*", "");
-    }
-
-    public void changeMeaning() {
-        num1 = Integer.parseInt(expressionArr[0]);
-        num2 = Integer.parseInt(expressionArr[1]);
-        sign = expressionArr[2].charAt(0);
-    }
-
     public void calculate() {
+        System.out.println("Введите первое число, операцию и второе число");
+        inpit();
+        expression();
+        changeMeaning();
         if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {
             switch (sign) {
                 case '+':
@@ -76,5 +68,29 @@ public class Calculator {
         } else {
             System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
+        format();
+    }
+
+    private void inpit() {
+        setData(scanner.nextLine());
+    }
+
+    private void expression() {
+        parentArr = getData().split("[\\s\\+\\-\\*\\/\\^\\%]+");
+        for (int i = 0; i < parentArr.length; i++) {
+            expressionArr[i] = parentArr[i];
+        }
+        expressionArr[2] = getData().replaceAll("\\d\\s*", "");
+    }
+
+    private void changeMeaning() {
+        num1 = Integer.parseInt(expressionArr[0]);
+        num2 = Integer.parseInt(expressionArr[1]);
+        sign = expressionArr[2].charAt(0);
+    }
+
+    private void format() {
+        String format = getResult() % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f";
+        System.out.printf(format, getNum1(), getSign(), getNum2(), getResult());
     }
 }

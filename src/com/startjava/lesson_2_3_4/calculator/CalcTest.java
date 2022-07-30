@@ -11,13 +11,7 @@ public class CalcTest {
         String choice = "yes";
         do {
             if ("yes".equals(choice)) {
-                System.out.println("Введите первое число, операцию и второе число");
-                calc.setData(scanner.nextLine());
-                calc.expression();
-                calc.changeMeaning();
                 calc.calculate();
-                String format = calc.getResult() % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f";
-                System.out.printf(format, calc.getNum1(), calc.getSign(), calc.getNum2(), calc.getResult());
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();     
