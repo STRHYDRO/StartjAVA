@@ -40,7 +40,6 @@ public class Calculator {
     }
 
     public void calculate() {
-        System.out.println("Введите первое число, операцию и второе число");
         inpit();
         expression();
         changeMeaning();
@@ -72,6 +71,7 @@ public class Calculator {
     }
 
     private void inpit() {
+        System.out.println("Введите первое число, операцию и второе число");
         setData(scanner.nextLine());
     }
 
