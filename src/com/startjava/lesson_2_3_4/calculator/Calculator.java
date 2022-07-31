@@ -2,7 +2,6 @@ package com.startjava.lesson_2_3_4.calculator;
 
 import java.math.*;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Calculator {
 
@@ -11,9 +10,6 @@ public class Calculator {
     private char sign;
     private double result = 0;
     private String data;
-    private String[] parentArr = new String[2];
-    private String[] expressionArr = new String[3];
-    private Scanner scanner = new Scanner(System.in);
 
     public double getNum1() {
         return num1;
@@ -40,9 +36,7 @@ public class Calculator {
     }
 
     public void calculate() {
-        inpit();
         expression();
-        changeMeaning();
         if ((getNum1() > 0 && getNum1() % 1 == 0) && (getNum2() > 0 && getNum2() % 1 == 0)) {
             switch (sign) {
                 case '+':
@@ -67,23 +61,16 @@ public class Calculator {
         } else {
             System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
-        format();
-    }
-
-    private void inpit() {
-        System.out.println("Введите первое число, операцию и второе число");
-        setData(scanner.nextLine());
     }
 
     private void expression() {
-        parentArr = getData().split("[\\s\\+\\-\\*\\/\\^\\%]+");
+        String[] parentArr = new String[2];
+        String[] expressionArr = new String[3];
+        parentArr = data.split("[\\s\\+\\-\\*\\/\\^\\%]+");
         for (int i = 0; i < parentArr.length; i++) {
             expressionArr[i] = parentArr[i];
         }
-        expressionArr[2] = getData().replaceAll("\\d\\s*", "");
-    }
-
-    private void changeMeaning() {
+        expressionArr[2] = data.replaceAll("\\d\\s*", "");
         num1 = Integer.parseInt(expressionArr[0]);
         num2 = Integer.parseInt(expressionArr[1]);
         sign = expressionArr[2].charAt(0);
