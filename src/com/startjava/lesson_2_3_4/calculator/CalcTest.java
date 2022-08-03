@@ -13,7 +13,7 @@ public class CalcTest {
             if ("yes".equals(choice)) {
                 System.out.println("Введите первое число, операцию и второе число");
                 String calculate = calc.calculate(scanner.nextLine());
-                System.out.println(calculate);
+                System.out.print(calculate);
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();     

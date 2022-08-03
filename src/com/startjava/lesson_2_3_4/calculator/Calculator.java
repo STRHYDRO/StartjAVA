@@ -11,6 +11,7 @@ public class Calculator {
     private String[] expressionArr = new String[3];
 
     public String calculate(String expression) {
+
         expressionArr =expression.split(" ");
         num1 = Integer.parseInt(expressionArr[0]);
         num2 = Integer.parseInt(expressionArr[2]);
@@ -40,9 +41,9 @@ public class Calculator {
             System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
 //        String format(result % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f");
-//        String conclusion = "(num1, sign, num2, result)";
-        String str = Double.toString(result);
-        return str;
+        String stringResult = " = " + Double.toString(result);
+        expression = expression.concat(stringResult);
+        return expression;
     }
 }
 
