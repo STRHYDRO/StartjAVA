@@ -12,7 +12,7 @@ public class Calculator {
 
     public String calculate(String expression) {
 
-        expressionArr =expression.split(" ");
+        expressionArr =expression.split("[\\s]");
         num1 = Integer.parseInt(expressionArr[0]);
         num2 = Integer.parseInt(expressionArr[2]);
         sign = expressionArr[1].charAt(0);
@@ -40,7 +40,6 @@ public class Calculator {
         } else {
             System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
-//        String format(result % 1 == 0 ? "%.0f %c %.0f = %.0f" : "%.0f %c %.0f = %.2f");
         String stringResult = " = " + Double.toString(result);
         expression = expression.concat(stringResult);
         return expression;
