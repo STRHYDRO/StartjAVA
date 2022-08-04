@@ -11,7 +11,6 @@ public class Calculator {
     private String[] expressionArr = new String[3];
 
     public String calculate(String expression) {
-
         expressionArr =expression.split("[\\s]");
         num1 = Integer.parseInt(expressionArr[0]);
         num2 = Integer.parseInt(expressionArr[2]);

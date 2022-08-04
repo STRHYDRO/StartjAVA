@@ -18,13 +18,14 @@ public class GuessNumber {
     public void play() {
         randomNumber = (int) (Math.random() * (100 + 1));
         do {
-            changePlayer();    
+            changePlayer();
+            System.out.println("У каждого игрока по 10 попыток");
             System.out.printf("Игрок %s введите целое число от 0 до 100\n", currName.getName());
             currName.setNum(scan.nextInt());
             scan.nextLine();
             if (currName.getNum() > 0 && currName.getNum() % 1 == 0) {
                 if (currName.getNum() == randomNumber) {
-                    System.out.printf("Победил игрок : %s", currName.getName());
+                    System.out.printf("Игрок : %s угадал число %d с %d попытки", currName.getName(), randomNumber, counter);
                     break;     
                 } else if (currName.getNum() < randomNumber) {
                     System.out.printf("число %s меньше того, что загадал компьютер\n", currName.getNum()); 
@@ -37,8 +38,13 @@ public class GuessNumber {
         } while(true);        
     }
 
+    private void inpit() {
+
+
+    }
+
     private void changePlayer() {
-        currName = player1 == currName ? player2 : player1; 
+        currName = player1 == currName ? player2 : player1;
     } 
 }
 

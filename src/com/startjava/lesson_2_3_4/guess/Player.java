@@ -4,6 +4,7 @@ public class Player {
 
     private String name;
     private int num;
+    private int[] numArr = new int[10];
 
     public Player(String name) {
         this.name = name;  
