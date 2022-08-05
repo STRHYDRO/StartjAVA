@@ -3,8 +3,8 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumber {
-     
-    Scanner scan = new Scanner(System.in); 
+
+    Scanner scan = new Scanner(System.in);
     private int randomNumber;
     private Player player1;
     private Player player2;
@@ -26,16 +26,16 @@ public class GuessNumber {
             if (currName.getNum() > 0 && currName.getNum() % 1 == 0) {
                 if (currName.getNum() == randomNumber) {
                     System.out.printf("Игрок : %s угадал число %d с %d попытки", currName.getName(), randomNumber, counter);
-                    break;     
+                    break;
                 } else if (currName.getNum() < randomNumber) {
-                    System.out.printf("число %s меньше того, что загадал компьютер\n", currName.getNum()); 
+                    System.out.printf("число %s меньше того, что загадал компьютер\n", currName.getNum());
                 } else if (currName.getNum() > randomNumber) {
                     System.out.printf("число %s больше того, что загадал компьютер\n", currName.getNum());
                 }
-            } else {        
+            } else {
                 System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
             }
-        } while(true);        
+        } while(true);
     }
 
     private void inpit() {
@@ -45,6 +45,6 @@ public class GuessNumber {
 
     private void changePlayer() {
         currName = player1 == currName ? player2 : player1;
-    } 
+    }
 }
 

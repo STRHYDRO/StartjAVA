@@ -3,7 +3,7 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumberTest {
-    
+
     public static void main(String[] args) {
         System.out.println("Игра: угадай число_2\n");
         Scanner scan = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class GuessNumberTest {
                 game.play();
             }
             System.out.println("\nХотите продолжить игру? [yes/no]:");
-            choice = scan.nextLine();    
+            choice = scan.nextLine();
         } while(!"no".equals(choice));
     }
 }

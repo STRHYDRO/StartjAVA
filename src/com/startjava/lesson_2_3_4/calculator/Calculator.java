@@ -29,6 +29,8 @@ public class Calculator {
         } else {
             System.out.println("\nЧисла отрицательные или не целые, для расчета введите целые положительные числа");
         }
+
+        return 0;
     }
 }
 
