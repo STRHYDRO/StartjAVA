@@ -13,8 +13,8 @@ public class Player {
         return name;
     }
 
-    public int[] getEnteredNums(int number) {
-
+    public int getEnteredNums() {
+        return enteredNums[counterNum];
     }
 
     public void setEnteredNums(int enteredNum) {
