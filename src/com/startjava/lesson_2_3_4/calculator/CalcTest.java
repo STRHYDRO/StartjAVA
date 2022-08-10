@@ -12,8 +12,8 @@ public class CalcTest {
         do {
             if ("yes".equals(choice)) {
                 System.out.println("Введите первое число, операцию и второе число");
-                Double calculate = calc.calculate(scanner.nextLine());
-                System.out.print(calculate);
+                Double result = calc.calculate(scanner.nextLine());
+                System.out.print(result);
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();     
