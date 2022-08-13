@@ -19,9 +19,10 @@ public class Player {
         return enteredNums[attempt];
     }
 
-    public void addNums(int enteredNum) {
+    public int addNums(int enteredNum) {
         enteredNums[attempt] = enteredNum;
         attempt++;
+        return enteredNum;
     }
 
     public int[] inpitArr() {

@@ -3,8 +3,6 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static java.util.Arrays.deepToString;
-
 public class GuessNumber {
 
     Scanner scan = new Scanner(System.in);
@@ -14,24 +12,21 @@ public class GuessNumber {
     private Player currentPlayer;
 
     public GuessNumber(Player player1, Player player2) {
-        this.player1 = player1;
+        this.player1 = currentPlayer;
         this.player2 = player2;
     }
 
     public void play() {
         randomNumber = 1 + (int) (Math.random() * 100);
+        System.out.println("У каждого игрока по 10 попыток");
         do {
-            changePlayer();
-            int num = currentPlayer.getEnteredNum();
-            System.out.println("У каждого игрока по 10 попыток");
-            System.out.printf("Игрок %s введите целое число от 1 до 100\n",currentPlayer.getName());
-            currentPlayer.addNums(scan.nextInt());
+            System.out.printf("Игрок %s введите целое число от 1 до 100\n", currentPlayer.getName());
+            int num = currentPlayer.addNums(scan.nextInt());
             scan.nextLine();
             if (num > 0) {
                 if (num == randomNumber) {
-                    System.out.printf("Игрок : %s угадал число %d с %d попытки",currentPlayer.getName(), randomNumber, currentPlayer.attempt);
-                    System.out.print(Arrays.toString(player1.inpitArr()));
-                    System.out.println(Arrays.toString(player2.inpitArr()));
+                    System.out.printf("Игрок : %s угадал число %d с %d попытки\n",currentPlayer.getName(), randomNumber, currentPlayer.attempt);
+                    inpitNums();
                     break;
                 } else if (num < randomNumber) {
                     System.out.printf("число %s меньше того, что загадал компьютер\n", num);
@@ -41,11 +36,24 @@ public class GuessNumber {
             } else {
                 System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
             }
+            changePlayer();
         } while(true);
     }
 
     private void changePlayer() {
-       currentPlayer = player1 ==currentPlayer ? player2 : player1;
+       currentPlayer = player1 == currentPlayer ? player2 : player1;
+    }
+
+    private void inpitNums() {
+        System.out.print("Игрок " + player1.getName() + " ввел числа: ");
+        for (int nums : player1.inpitArr()) {
+            System.out.print("  " + nums);
+        }
+        System.out.println();
+        System.out.print("Игрок " + player2.getName() + " ввел числа: ");
+        for (int nums : player2.inpitArr()) {
+            System.out.print("  " + nums);
+        }
     }
 }
 
