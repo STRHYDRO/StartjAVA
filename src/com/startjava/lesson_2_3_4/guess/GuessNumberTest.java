@@ -16,7 +16,6 @@ public class GuessNumberTest {
         do {
             if ("yes".equals(choice)) {
                 game.play();
-                player1.resetArr();
             }
             System.out.println("\nХотите продолжить игру? [yes/no]:");
             choice = scan.nextLine();

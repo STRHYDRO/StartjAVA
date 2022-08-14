@@ -12,7 +12,7 @@ public class CalcTest {
         do {
             if ("yes".equals(choice)) {
                 System.out.println("Введите первое число, операцию и второе число");
-                Double result = calc.calculate(scanner.nextLine());
+                Double result = calc.inpit(scanner.nextLine());
                 System.out.print(result);
             }
             System.out.println("\nХотите продолжить вычисления? [yes/no]:");

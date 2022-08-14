@@ -2,14 +2,8 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    protected static double calculate(String expression) {
-        String[] partsExpression = expression.split("[\\s]");
-        try {
-            int num1 = Integer.parseInt(partsExpression[0]);
-            int num2 = Integer.parseInt(partsExpression[2]);
-            char sign = partsExpression[1].charAt(0);
-        }
-
+    public double calculate(String expression) {
+        inpit();
         if (check(num1, num2)) {
             switch (sign) {
                 case '+' -> { return Math.addExact(num1, num2); }
@@ -29,5 +23,13 @@ public class Calculator {
         return (num1 > 0 && num1 % 1 == 0) && (num2 > 0 && num2 % 1 == 0);
     }
 
+    public double inpit(String expression) {
+        String[] partsExpression = expression.split("[\\s]");
+        int num1 = Integer.parseInt(partsExpression[0]);
+        int num2 = Integer.parseInt(partsExpression[2]);
+        char sign = partsExpression[1].charAt(0);
+        
+
+    }
 }
 
