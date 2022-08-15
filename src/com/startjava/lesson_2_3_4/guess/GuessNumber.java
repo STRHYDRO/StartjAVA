@@ -22,12 +22,12 @@ public class GuessNumber {
         boolean check = false;
 
         System.out.println("У каждого игрока по 10 попыток");
-        System.out.printf("Игрок %s введите целое число от 1 до 100\n", currentPlayer.getName());
         int num = currentPlayer.addNum(scan.nextInt());
         scan.nextLine();
 
         check(num, check);
-        while (check == true) {
+        while (check == true && num != randomNumber) {
+            System.out.printf("Игрок %s введите целое число от 1 до 100\n", currentPlayer.getName());
             String moreLess = num < randomNumber ? "меньше" : "больше";
             System.out.printf("Число %d %s того что загадал компьютер", num, moreLess);
 
