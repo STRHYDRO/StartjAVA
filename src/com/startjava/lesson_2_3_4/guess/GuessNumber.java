@@ -28,14 +28,13 @@ public class GuessNumber {
 
         check(num, check);
         while (check == true) {
+            String moreLess = num < randomNumber ? "меньше" : "больше";
+            System.out.printf("Число %d %s того что загадал компьютер", num, moreLess);
+
             if (num == randomNumber) {
                 System.out.printf("Игрок : %s угадал число %d с %d попытки\n", currentPlayer.getName(), randomNumber, currentPlayer.getAttempt());
                 inpitNums(currentPlayer);
                 break;
-            } else if (num < randomNumber) {
-                System.out.printf("число %s меньше того, что загадал компьютер\n", num);
-            } else {
-                System.out.printf("число %s больше того, что загадал компьютер\n", num);
             }
             changePlayer();
             currentPlayer.reset();
