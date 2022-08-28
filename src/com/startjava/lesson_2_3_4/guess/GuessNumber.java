@@ -10,6 +10,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private Player currentPlayer;
+    private boolean check;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -19,14 +20,14 @@ public class GuessNumber {
 
     public void play() {
         int randomNumber = 1 + (int) (Math.random() * 100);
-        boolean check = false;
+
 
         System.out.println("У каждого игрока по 10 попыток");
         while (currentPlayer.getAttempt() != maxAttempts) {
             System.out.printf("Игрок %s введите целое число от 1 до 100\n", currentPlayer.getName());
             int num = currentPlayer.addNum(scan.nextInt());
 
-            check(num, check);
+            check(num);
 
             if (num == randomNumber && check == true) {
                 System. out.printf("Победил игрок %s, угадав число %d с %d попытки\n", currentPlayer.getName(), randomNumber,currentPlayer.getAttempt());
@@ -48,14 +49,13 @@ public class GuessNumber {
         currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 
-    private boolean check(int num, boolean check) {
+    private boolean check(int num) {
         if (currentPlayer.getEnteredNum() > 0)  {
-            check = true;
+             return check = true;
         } else {
-            check = false;
             System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
+            return check = false;
         }
-        return check;
     }
 
     private void inpitNums(Player currentPlayer) {
