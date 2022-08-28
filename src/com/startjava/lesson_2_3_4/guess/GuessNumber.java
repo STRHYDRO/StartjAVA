@@ -29,15 +29,17 @@ public class GuessNumber {
 
             check(num);
 
-            if (num == randomNumber && check == true) {
-                System. out.printf("Победил игрок %s, угадав число %d с %d попытки\n", currentPlayer.getName(), randomNumber,currentPlayer.getAttempt());
-                break;
-            } else {
-                String moreLess = num < randomNumber ? "меньше" : "больше";
-                System.out.printf("Число %d %s того что загадал компьютер", num, moreLess);
-                System.out.println();
+            if(check = true) {
+                if (num == randomNumber) {
+                    System.out.printf("Победил игрок %s, угадав число %d с %d попытки\n", currentPlayer.getName(), randomNumber, currentPlayer.getAttempt());
+                    break;
+                } else {
+                    String moreLess = num < randomNumber ? "меньше" : "больше";
+                    System.out.printf("Число %d %s того что загадал компьютер", num, moreLess);
+                    System.out.println();
+                }
+                changePlayer();
             }
-            changePlayer();
         }
         System.out.print("Игрок " + player1.getName() + " назвал числа: " );
         inpitNums(player1);
