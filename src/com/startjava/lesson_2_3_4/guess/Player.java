@@ -16,7 +16,10 @@ public class Player {
     }
 
     public int getEnteredNum() {
-        return enteredNums[attempt];
+        if (attempt == 0) {
+            return enteredNums[attempt];
+        }
+        return enteredNums[attempt - 1];
     }
 
     public int getAttempt() {
