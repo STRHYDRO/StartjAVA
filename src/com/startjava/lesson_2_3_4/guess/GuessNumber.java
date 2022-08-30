@@ -49,10 +49,10 @@ public class GuessNumber {
 
     private boolean checkIsPositive(int num) {
         changePlayer();
-        if (currentPlayer.getEnteredNum() < 1) {
-            System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
+        if (currentPlayer.getEnteredNum() >= 1) {
             return false;
         }
+        System.out.println("Вы ввели не подходящее число, вводите только целые положительные числа");
         return true;
     }
 
