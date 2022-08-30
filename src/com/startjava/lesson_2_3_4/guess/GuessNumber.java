@@ -34,7 +34,7 @@ public class GuessNumber {
                 } else {
                     String moreLess = num < randomNumber ? "меньше" : "больше";
                     System.out.printf("Число %d %s того что загадал компьютер\n", num, moreLess);
-                    changePlayer();
+                    currentPlayer = currentPlayer == player1 ? player2 : player1;
                 }
             }
         }
@@ -43,12 +43,7 @@ public class GuessNumber {
         currentPlayer.reset();
     }
 
-    private void changePlayer() {
-        currentPlayer = currentPlayer == player1 ? player2 : player1;
-    }
-
     private boolean checkIsPositive(int num) {
-        changePlayer();
         if (currentPlayer.getEnteredNum() >= 1) {
             return true;
         }
