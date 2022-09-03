@@ -2,7 +2,7 @@ SELECT * FROM jaegers; --Вся таблица
 
 SELECT * FROM jaegers WHERE status = 'enabled'; --Только рабочие роботы
 
-SELECT * FROM jaegers WHERE mark = '1' OR mark = '4'; --вывод определенных роботов
+SELECT * FROM jaegers WHERE mark = '3' OR mark = '4'; --вывод определенных роботов
 
 SELECT * FROM jaegers ORDER BY mark DESC; --Сортировка по типу
 

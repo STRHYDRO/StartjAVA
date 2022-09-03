@@ -7,4 +7,4 @@ CREATE TABLE Jaegers (id SERIAL PRIMARY KEY,
                       status TEXT,
                       origin TEXT,
                       launch DATE,
-                      kaigiKill INTEGER);
+                      kaijiKill INTEGER);
