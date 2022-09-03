@@ -1,5 +1,5 @@
 INSERT INTO jaegers (modelName, mark, height, weight, status, origin, launch, kaijiKill)
-VALUE ('Striker Eureka', '5', '76.2', '1850', 'desabled', 'Australia', '2019-10-02', '11'),
+VALUES ('Striker Eureka', '5', '76.2', '1850', 'desabled', 'Australia', '2019-10-02', '11'),
       ('Crimson Typhoon', '4', '76.0', '1722', 'desabled', 'USA', '2018-08-22', '7'),
       ('Chronos Berserker', '5', '81.3', '2124', 'enabled', 'Australia', '2021-04-03', '12'),
       ('November Ajax', '6', '78.9', '2023', 'desabled', 'China', '2017-05-16', '10'),
